@@ -1,3 +1,0 @@
-Dataset,Inc. (ms),"Batch, fair (ms)",Speedup (fair),"Batch, naive-loop (ms)",Speedup (naive-loop)
-Cora,2.36,60.8,26,2794.6,1202
-CiteSeer,9.33,170.1,18,21297.1,2287

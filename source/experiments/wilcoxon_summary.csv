@@ -1,5 +1,0 @@
-Comparison,Dataset,N,Mean $\Delta$ (pp),95% CI (pp),Cohen's $d_z$,Wilcoxon $p$,TOST $p$ ($\pm$1pp)
-Grid $\alpha$ vs.\ plain,Cora,10,0.20,"[-0.30, 0.70]",0.28,0.625,0.003
-Grid $\alpha$ vs.\ plain,CiteSeer,10,0.03,"[-0.23, 0.29]",0.08,0.812,$<0.001$
-Learned $\alpha$ vs.\ plain,Cora,10,0.32,"[-0.38, 1.02]",0.33,0.285,0.027
-Learned $\alpha$ vs.\ plain,CiteSeer,10,0.06,"[-0.34, 0.46]",0.11,0.778,$<0.001$

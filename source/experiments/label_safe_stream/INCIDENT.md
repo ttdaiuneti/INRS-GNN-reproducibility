@@ -1,1 +1,0 @@
-Initial run stopped before any stream record: caller supplied a redundant new-node positional argument to the existing sparse kernel. Corrected the call to its actual signature. No protocol, tolerance, seed, or experimental outcome was changed. Initial metadata is retained in attempt0_signature_error/.
