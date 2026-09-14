@@ -1,0 +1,15 @@
+{
+ "version":"ogb-robustness-v1",
+ "status":"frozen before benchmark execution",
+ "seeds":[0,1,2],
+ "initial_fraction":0.8,
+ "insertions":1000,
+ "checkpoints":[0,500,1000],
+ "block":2048,
+ "tolerance":1e-9,
+ "design":"Three independent seeded permutations, each determining both its 80% initial active set and subsequent insertion order. Seed 0 shares the initial set and first 200 arrivals of the earlier study but is rerun, not pooled. Variation includes initial graph composition and arrival order; it does not isolate order alone.",
+ "implementation":"Reuse experiments/e2e_ogb_stream.py unchanged, override only SEED, K_INSERTS, CHECKPOINTS and OUT. Serial fresh processes, original CPU environment, no simultaneous benchmark workers. Active-mask replay of topology laid out in advance; excludes ingestion of unknown topology, initialization and checkpoint validation from per-arrival latency.",
+ "estimators":"Per seed: mean, median, p90 and maximum per-insertion latency; final batch anchor / mean incremental latency. Across seeds: mean and population SD of seed-level means and ratios, no pooled-seed confidence interval. Also report latency means in five consecutive blocks of 200 to show within-stream variation. All runs retained.",
+ "checks":"Full active-edge weight support, finite/infinite radius agreement, tolerance, symmetry and inactive-zero state at checkpoints, using existing strict checkpoint assertions. Require all 1000 step records and all three passed checkpoints per seed. Stop on failure and retain logs.",
+ "limits":"Only three initial-set/order realizations and early 1000 insertions; neither full remaining stream nor classification evaluation. Peak RSS includes batch anchors. No universal speedup or crossover claim. New experiment is separate from original 200-step results and the controlled locality stress benchmark."
+}

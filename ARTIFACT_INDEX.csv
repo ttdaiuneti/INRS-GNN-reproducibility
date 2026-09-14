@@ -1,0 +1,14 @@
+evidence,manuscript_use,source,results
+full-scale exactness,correctness table,source/experiments/e1_full_scale_correctness.py,results/canonical/e1_full_scale_correctness.json
+snapshot GCN accuracy,accuracy and ablation tables,source/experiments/e3_pyg_aligned_benchmark.py,results/canonical/e3_pyg_aligned_results.json
+label-safe diagnostics,operator diagnostics,source/experiments/e3_label_safe_diagnostics.py,results/canonical/e3_label_safe_diagnostics.json
+matched citation timing,timing table and speedup figure,source/experiments/e2e_fair_timing.py,results/canonical/e2e_fair_timing_results.json
+graph-size timing sweep,scaling table and figure,source/experiments/e2e_scale_timing.py,results/canonical/e2e_scale_timing_results.json
+stateful OGB stream,large-graph scaling evidence,source/experiments/e2e_ogb_stream.py,results/canonical/e2e_ogb_stream_results.json
+controlled locality stress,locality stress table,source/experiments/locality_stress/run.py,results/locality_stress
+OGB robustness extension,three seeded 1000-insertion streams,source/experiments/ogb_robustness/run.py,results/ogb_robustness
+immutable label-safe stream,label-safe insertion checks,source/experiments/label_safe_stream/run.py,results/label_safe_stream
+full-pipeline controls,downstream negative-control study,source/experiments/full_pipeline_controls/run.py,results/full_pipeline_controls
+theory numerical check,incremental identity validation,source/theory/e0_incremental_delta_check.py,results/theory/e0_check_results.json
+synthetic locality pilot,affected-edge evidence,source/pilot/d0_graph_locality_pilot.py,results/pilot/pilot_results.json
+

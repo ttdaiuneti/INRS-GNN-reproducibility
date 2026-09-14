@@ -1,0 +1,125 @@
+{
+  "started": "2026-09-12T23:52:40.211431+00:00",
+  "source_hashes": {
+    "experiments/label_safe_stream/protocol.json": "62996a14b9c602f9aa8c8b8bceae7e70c2c88c8028791bd279d15a92981e42a9",
+    "experiments/label_safe_stream/run.py": "b5a306f59a48e11e1724f9393ed8502b9b1e2012f6373fab77793af217aefd06",
+    "theory/incremental_rough_adjacency.py": "f4a6edc22773dcd40bb00de85e58cd8d68eb81e4987ca34c90cbba101ecbd08e",
+    "experiments/e0_gnn_prototype.py": "5c34f3db54be841de717e6fc038ba7f42e2af87c75d844433fe58c6f1ce3a915"
+  },
+  "numpy": "2.0.2",
+  "torch": "2.8.0",
+  "completed": true,
+  "edge_cases": [
+    {
+      "seed": 0,
+      "passed": true
+    },
+    {
+      "seed": 1,
+      "passed": true
+    },
+    {
+      "seed": 2,
+      "passed": true
+    },
+    {
+      "seed": 3,
+      "passed": true
+    },
+    {
+      "seed": 4,
+      "passed": true
+    },
+    {
+      "seed": 5,
+      "passed": true
+    },
+    {
+      "seed": 6,
+      "passed": true
+    },
+    {
+      "seed": 7,
+      "passed": true
+    },
+    {
+      "seed": 8,
+      "passed": true
+    },
+    {
+      "seed": 9,
+      "passed": true
+    },
+    {
+      "seed": 10,
+      "passed": true
+    },
+    {
+      "seed": 11,
+      "passed": true
+    }
+  ],
+  "summaries": [
+    {
+      "dataset": "cora",
+      "seed": 0,
+      "initial_trusted": 425,
+      "trusted_arrivals": 19,
+      "max_delta_error": 0.0,
+      "max_weight_error": 2.220446049250313e-16,
+      "final_logit_error": 0.0,
+      "n_rough_edges": 517
+    },
+    {
+      "dataset": "cora",
+      "seed": 1,
+      "initial_trusted": 314,
+      "trusted_arrivals": 5,
+      "max_delta_error": 0.0,
+      "max_weight_error": 2.220446049250313e-16,
+      "final_logit_error": 0.0,
+      "n_rough_edges": 299
+    },
+    {
+      "dataset": "cora",
+      "seed": 2,
+      "initial_trusted": 353,
+      "trusted_arrivals": 7,
+      "max_delta_error": 0.0,
+      "max_weight_error": 2.220446049250313e-16,
+      "final_logit_error": 0.0,
+      "n_rough_edges": 370
+    },
+    {
+      "dataset": "citeseer",
+      "seed": 0,
+      "initial_trusted": 139,
+      "trusted_arrivals": 1,
+      "max_delta_error": 0.0,
+      "max_weight_error": 2.220446049250313e-16,
+      "final_logit_error": 0.0,
+      "n_rough_edges": 42
+    },
+    {
+      "dataset": "citeseer",
+      "seed": 1,
+      "initial_trusted": 181,
+      "trusted_arrivals": 2,
+      "max_delta_error": 0.0,
+      "max_weight_error": 2.220446049250313e-16,
+      "final_logit_error": 0.0,
+      "n_rough_edges": 99
+    },
+    {
+      "dataset": "citeseer",
+      "seed": 2,
+      "initial_trusted": 204,
+      "trusted_arrivals": 1,
+      "max_delta_error": 0.0,
+      "max_weight_error": 2.220446049250313e-16,
+      "final_logit_error": 0.0,
+      "n_rough_edges": 117
+    }
+  ],
+  "finished": "2026-09-12T23:54:15.129970+00:00"
+}

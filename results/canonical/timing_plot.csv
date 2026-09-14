@@ -1,0 +1,5 @@
+dataset_x,time_ms,method
+0,2.3596,Incremental delta+W
+0,60.8433,Batch delta+W rebuild
+1,9.3298,Incremental delta+W
+1,170.1195,Batch delta+W rebuild

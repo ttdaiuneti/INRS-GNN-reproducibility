@@ -1,0 +1,241 @@
+# protocol.yaml — bước ④a (RESEARCH_SOP.md). Retroactive freeze.
+#
+# NOTE (honesty about retroactivity): this protocol is written AFTER most of
+# ④'s experiments already ran, not before (violates the letter of "freeze
+# before running"). It exists now to (a) stop further silent design changes,
+# (b) classify what already happened as A-blind/A-informed per SOP §4a so the
+# accuracy claim is graded correctly, (c) be the reference point for anything
+# that runs from here on. Re-running e3_pyg_aligned_benchmark.py with no
+# further design changes is compatible with this freeze; changing ALPHAS,
+# TRUSTED_TAU, the hybrid formula, or adding datasets after this point must go
+# through the amendments log below, not a silent edit.
+
+frozen_at: "2026-08-31"
+frozen_commit: null  # no git repo initialized in this project yet — see note below
+theory_pass_ref: "docs/proofs/formal_framework.tex (theory.status: pass, 2026-08-30; label-safe Definition + Remark added 2026-08-31)"
+
+datasets:
+  - name: Cora
+    source: "torch_geometric.datasets.Planetoid, public split"
+    version_pin: "PyG Planetoid public split, NormalizeFeatures (row L1)"
+    split: {train: 140, val: 500, test: 1000}
+  - name: Citeseer
+    source: "torch_geometric.datasets.Planetoid, public split"
+    version_pin: "PyG Planetoid public split, NormalizeFeatures (row L1)"
+    split: {train: 120, val: 500, test: 1000}
+  - name: SBM-synthetic
+    role: "D0 locality pilot only — not part of the ④ accuracy benchmark"
+
+protocol:
+  primary: "Static accuracy benchmark (e3_pyg_aligned_benchmark.py) — 5-seed
+    mean±std test accuracy, model selection on val_mask, sanity gate vs PyG
+    GCNConv (tolerance 1.5%)."
+  diagnostic: "e0_gnn_prototype.py / e1_hybrid_gcn.py / e2_tune_timing.py /
+    e0_acc_diagnosis.py — legacy loader, single-seed or ablation sweeps,
+    archived/superseded for accuracy numbers (different preprocessing than
+    PyG canonical), retained only for timing/locality/diagnostic evidence."
+  streaming_locality: "theory/e0_incremental_delta_check.py + pilot/d0_graph_locality_pilot.py
+    — oracle δ_B (full labels), valid as structural/complexity check only,
+    never fed to a predicting model. See Assumption 4a, formal_framework.tex."
+
+baselines:
+  - GCN_plain (Kipf & Welling 2017)
+  - RG_GCN_static (Ding et al. 2022, simplified reproduction — not a faithful
+    upper bound, see e3_pyg_aligned_report.md)
+
+hyperparameter_policy:
+  gcn: "hidden=16, dropout=0.5, Adam lr=0.01, wd=5e-4, 200 epochs, fixed
+    (not tuned per dataset) — PyG citation benchmark default."
+  alpha_grid: [0.5, 1.0, 2.0, 5.0]  # val-best per seed
+  trusted_tau: 0.8  # pseudo-label confidence threshold, label-safe δ_B
+
+statistical_tests:
+  - "Wilcoxon signed-rank, paired over 5 seeds, hybrid vs plain (added
+    retroactively 2026-08-31 — see amendments)."
+  note: "n=5 seeds is below the ≥5-dataset threshold RESEARCH_SOP.md gives for
+    Friedman/Nemenyi (that threshold is about number of DATASETS, not seeds).
+    With only 2 datasets, no omnibus test applies — per-dataset Wilcoxon is
+    the correct minimal test, not a substitute for a larger dataset panel."
+
+seeds: [42, 0, 1, 2, 3]
+
+amendments:
+  - date: "2026-08-30"
+    change: "ψ-only rough adjacency replaced by hybrid A + αψ (E0→E1)"
+    reason: "ψ-only caused -11.6% Cora, -3.5% Citeseer vs plain GCN (E0 result)"
+    type: A-informed
+    consequence: "Any accuracy number for the hybrid design is exploratory,
+      not confirmatory — the design itself was chosen after seeing ψ-only
+      fail. This is exactly why RQ3 in claims_table.md is graded 'exploratory
+      only, not statistically established' rather than treated as a clean
+      confirmatory test."
+
+  - date: "2026-08-30"
+    change: "learned-α (softplus, joint training) added alongside grid-search α"
+    reason: "wanted to test whether a data-driven α does better than a
+      hand-picked grid"
+    type: A-informed
+    consequence: "Same as above — both hybrid variants (grid, learned) are
+      exploratory design choices, graded together in claims_table.md."
+
+  - date: "2026-08-30 → 2026-08-31"
+    change: "seeds expanded from [42] (research_plan.yaml original) to
+      [42, 0, 1, 2, 3] in e3_pyg_aligned_benchmark.py"
+    reason: "single-seed accuracy numbers are not defensible for a claim;
+      widened for statistical rigor, not because seed=42 gave an
+      unfavorable result (42 remains the first/primary seed throughout)"
+    type: A-blind
+    consequence: "None — protocol improvement, applied uniformly to all
+      methods (plain, RG, hybrid) at once, not selectively."
+
+  - date: "2026-08-31"
+    change: "label leakage fix: calc_deltas_torch (oracle, reads held-out
+      labels) replaced by calc_deltas_torch_trusted (label-safe, train +
+      confident pseudo-labels only) across e0-e3"
+    reason: "methodological bug — δ_B/W_psi for a node used that node's own
+      ground-truth label as a potential 'enemy' reference, i.e. classic
+      transductive label leakage. Found by code review, not by result-shopping."
+    type: A-blind
+    consequence: "None on validity grading (this is a correctness fix, not a
+      result-motivated choice) — but note for the record: the fix changed
+      Cora hybrid-vs-plain from +0.38% to +0.24% and Citeseer from -0.20% to
+      +0.04%, both changes small relative to std (0.4-0.7pp). The leak was
+      not the source of the previously observed 'improvement' — the
+      improvement was never statistically real (see claims_table.md RQ3)."
+
+  - date: "2026-08-31"
+    change: "this protocol.yaml itself, written retroactively"
+    reason: "SOP requires freeze before ④ runs; this project ran most of ④
+      first and is only now formalizing it — documented here rather than
+      silently backfilled"
+    type: A-informed
+    consequence: "The retroactivity itself is the honest disclosure — no
+      further experiments should be run and folded into 'confirmatory'
+      results without going through this log from this point forward."
+
+  - date: "2026-08-31"
+    change: "added INRS_psi_only (W_psi alone, no binary A) to
+      e3_pyg_aligned_benchmark.py's canonical PyG-aligned label-safe protocol"
+    reason: "table_figure_skill.md ablation requirement — earlier psi-only
+      numbers (docs/e0_acc_root_cause.md, ~4-5pp degradation) used a legacy
+      loader (TOP_B=50 features, different preprocessing), not directly
+      comparable to the canonical accuracy table. Needed a psi-only number in
+      the SAME protocol as GCN_plain/hybrid for a fair ablation table."
+    type: A-blind
+    consequence: "None — adds a baseline arm, does not touch or re-select any
+      existing method's hyperparameters or results."
+
+  - date: "2026-09-10"
+    change: "TOST equivalence test (±1pp margin) added alongside the Wilcoxon
+      signed-rank test, and the accuracy re-run widened from 5 to 10 seeds
+      [42, 0, 1, 2, 3, 4, 5, 6, 7, 8]."
+    reason: "review round 1 (docs/review_opus_round1.md, MAJOR-E4): at n=5 the
+      minimum attainable two-sided Wilcoxon p is 0.0625, so a non-significant
+      p cannot support a parity claim. An equivalence test states the claim
+      directly; the seed count was raised so the paired t-based TOST has some
+      power."
+    type: A-informed
+    consequence: "Both the ±1pp margin and the 10-seed re-run were adopted
+      AFTER the first-round results had been seen. The margin was NOT
+      registered in advance. The equivalence analysis is therefore reported as
+      EXPLORATORY throughout (abstract, §6, Table tab:accuracy-stats caption),
+      not as a confirmatory test. The seed expansion changes only the
+      downstream GCN initialisation and the train/val/test split is fixed, so
+      all ten seeds are conditional on a single realised rough graph per
+      dataset; that conditioning is disclosed with the result."
+    artifacts: "experiments/results/e3_pyg_aligned_results.json (10 seed_runs
+      per dataset) -> experiments/wilcoxon_summary.csv (build_raw_results.py)
+      -> docs/manuscript/tables/tab_wilcoxon.tex"
+
+  - date: "2026-09-10"
+    change: "Wilcoxon differences are now formed on the integer accuracy grid
+      (rint(acc*n_test) counts) instead of subtracting two rounded floats."
+    reason: "review 2026-09-10 round 2, finding r2: np.round(x,3) is not
+      exactly representable, so per-seed differences that are equal in
+      correct-test-node count could differ in the last bit and be ranked
+      apart."
+    type: A-blind
+    consequence: "Numerical correction only, applied identically to all four
+      comparisons. Cora learned-α moved from p=0.28590 to p=0.28547 (printed
+      0.286 -> 0.285); the other three are unchanged, and no TOST result or
+      equivalence conclusion changes."
+    artifacts: "experiments/build_raw_results.py -> wilcoxon_summary.csv ->
+      tab_wilcoxon.tex (regenerated 2026-09-10)"
+
+  - date: "2026-09-10"
+    change: "ogbn-arxiv scaling point replaced: the kernel microbenchmark
+      (e2e_ogb_scale.py, 20 insertions replayed from one fixed state, two
+      kernels timed in isolation) is SUPERSEDED by a stateful stream
+      (e2e_ogb_stream.py, 200 consecutive insertions with δ_B and W^rough
+      carried forward, three independent batch anchors with full-support
+      verification)."
+    reason: "review 2026-09-10, finding M3: the old script reused the same
+      deltas/features for every insertion, so it measured kernel cost around a
+      snapshot, not streaming maintenance."
+    type: A-blind
+    consequence: "Design correction, not a result-motivated choice; the new
+      measurement is the stricter one (per-insertion time now also covers
+      bookkeeping). Scope disclosed with the result: one seed, one arrival
+      order, 200 steps at ~1.35e5 active nodes, topology laid out once and
+      revealed through an active mask. The reported ratio is the
+      end-of-stream batch anchor divided by the mean incremental total, not a
+      mean of paired per-step ratios."
+    artifacts: "experiments/results/e2e_ogb_stream_results.json (200
+      per_insertion_records, 3 batch_anchors, 3 correctness_checks);
+      e2e_ogb_scale.py and its JSON retained for provenance only."
+
+  - date: "2026-09-10"
+    change: "diagnostics of §5 (δ=∞ fractions, zero-edge fractions, weighted
+      degrees, mean normalised self-loop coefficient) recomputed on the E3
+      label-safe rough matrices by e3_label_safe_diagnostics.py."
+    reason: "review 2026-09-10, finding M6: the manuscript explained current
+      E3 behaviour with mean-weight figures produced under an older (E0)
+      protocol with a different trusted set."
+    type: A-blind
+    consequence: "Provenance correction. No experiment re-run; the diagnostics
+      now reconstruct the exact matrices E3 used, at the same seed."
+    artifacts: "experiments/results/e3_label_safe_diagnostics.json"
+
+  - date: "2026-09-10"
+    change: "checkpoint verification in e2e_ogb_stream.py now asserts its
+      declared criteria (finite/infinite pattern, no NaN, tolerance 1e-9, all
+      rebuilt edges located, W symmetry) instead of only recording numbers;
+      the artifact was regenerated by the asserting version."
+    reason: "review 2026-09-10 round 2, finding r6."
+    type: A-blind
+    consequence: "None on any claim — the previously recorded values already
+      satisfy these criteria; the criteria are now machine-checked."
+
+  - date: "2026-09-10"
+    change: "figure/table helper scripts (_auto_generated.py,
+      build_tables_from_csv.py) vendored into experiments/ instead of being
+      imported from ~/Documents/research-commons/scripts."
+    reason: "review 2026-09-10 round 2, finding r5: the artifact-generation
+      sequence in README.md did not run from a fresh clone."
+    type: A-blind
+    consequence: "None on any number; reproducibility only."
+
+git_note: "No git repository initialized in Phd-Dai as of 2026-08-31 (checked
+  at session start: 'Is a git repository: false'). frozen_commit cannot be
+  filled until git init happens — recommended before any further experiment
+  changes, so amendments can be tied to actual commits instead of dates only."
+
+# 2026-09-11 additive experiment: locality stress protocol frozen before execution.
+# See locality_stress/protocol.json and results/metadata.json for exact design,
+# protocol hash, source hashes and execution timestamps. No changes to the
+# original classification protocol, seed sets or existing results.
+
+# 2026-09-11 additive OGB robustness extension: three seeded initial-set/order
+# realizations, 1000 insertions each, checkpoints 0/500/1000. Frozen before run:
+# ogb_robustness/protocol.json; hashes and timestamps in results/metadata.json.
+# Original 200-step results and classification protocol are unchanged.
+
+# OGB extension amendment v2: failed seed0 t=1000 exposed Gram cancellation
+# for identical opposite-label vectors. Numerical batch-reference guard added;
+# tolerance 1e-9 and incremental kernels unchanged. All 3 seeds rerun; failure
+# and diagnostics retained in ogb_robustness/INCIDENT.md and results_attempt1/.
+
+# 2026-09-13 additive fixed-assignment label-safe stream verification.
+# See label_safe_stream/protocol.json and results/metadata.json. Existing
+# accuracy, timing and robustness results are unchanged. This verifies
+# operator equality; it is not a streaming accuracy or timing experiment.

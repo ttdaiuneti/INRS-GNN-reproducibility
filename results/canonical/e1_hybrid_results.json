@@ -1,0 +1,182 @@
+[
+  {
+    "dataset": "cora",
+    "n_nodes": 2708,
+    "n_features": 1433,
+    "batch_delta_w_build_s": 11.14214825630188,
+    "trusted_fraction_batch": 0.05206794682422452,
+    "rg_build_s": 0.19323325157165527,
+    "stream_incremental_s": 4.001956224441528,
+    "single_batch_rebuild_s": 0.19036388397216797,
+    "speedup_stream_vs_single_batch": 0.04756770771492714,
+    "touch_mean": 5.3468634686346865,
+    "touch_max": 182,
+    "touch_over_n_mean": 0.0019744695231295,
+    "n_stream_steps": 542,
+    "max_W_inc_vs_batch_full_graph": 0.8954402896884689,
+    "max_W_stream_vs_batch_subgraph": 0.0,
+    "best_alpha": 5.0,
+    "alpha_grid": [
+      {
+        "name": "INRS_hybrid_a0.5",
+        "val_acc": 0.75,
+        "test_acc": 0.6600000262260437,
+        "train_time_s": 3.268659830093384,
+        "alpha": 0.5
+      },
+      {
+        "name": "INRS_hybrid_a1.0",
+        "val_acc": 0.7480000257492065,
+        "test_acc": 0.6460000276565552,
+        "train_time_s": 3.52752423286438,
+        "alpha": 1.0
+      },
+      {
+        "name": "INRS_hybrid_a2.0",
+        "val_acc": 0.7540000081062317,
+        "test_acc": 0.6639999747276306,
+        "train_time_s": 3.4437830448150635,
+        "alpha": 2.0
+      },
+      {
+        "name": "INRS_hybrid_a5.0",
+        "val_acc": 0.7559999823570251,
+        "test_acc": 0.6639999747276306,
+        "train_time_s": 3.032442808151245,
+        "alpha": 5.0
+      }
+    ],
+    "models": {
+      "GCN_plain": {
+        "name": "GCN_plain",
+        "val_acc": 0.7519999742507935,
+        "test_acc": 0.6589999794960022,
+        "train_time_s": 2.805601119995117
+      },
+      "RG_GCN_static": {
+        "name": "RG_GCN_static",
+        "val_acc": 0.7519999742507935,
+        "test_acc": 0.6600000262260437,
+        "train_time_s": 3.350661277770996
+      },
+      "INRS_hybrid_best": {
+        "name": "INRS_hybrid_a5.0",
+        "val_acc": 0.7559999823570251,
+        "test_acc": 0.6639999747276306,
+        "train_time_s": 3.032442808151245,
+        "alpha": 5.0
+      },
+      "INRS_hybrid_inc": {
+        "name": "INRS_hybrid_inc_a5.0",
+        "val_acc": 0.765999972820282,
+        "test_acc": 0.6679999828338623,
+        "train_time_s": 2.560619831085205
+      },
+      "INRS_psi_only": {
+        "name": "INRS_psi_only",
+        "val_acc": 0.5979999899864197,
+        "test_acc": 0.15199999511241913,
+        "train_time_s": 2.806852102279663
+      }
+    },
+    "summary": {
+      "GCN_plain_test": 0.6589999794960022,
+      "RG_GCN_static_test": 0.6600000262260437,
+      "INRS_hybrid_best_test": 0.6639999747276306,
+      "INRS_hybrid_inc_test": 0.6679999828338623,
+      "INRS_psi_only_test": 0.15199999511241913,
+      "hybrid_vs_plain_delta": 0.004999995231628418,
+      "hybrid_vs_rg_delta": 0.003999948501586914
+    }
+  },
+  {
+    "dataset": "citeseer",
+    "n_nodes": 3327,
+    "n_features": 3703,
+    "batch_delta_w_build_s": 35.50086498260498,
+    "trusted_fraction_batch": 0.06281935677787796,
+    "rg_build_s": 0.2962989807128906,
+    "stream_incremental_s": 18.9098858833313,
+    "single_batch_rebuild_s": 0.31314611434936523,
+    "speedup_stream_vs_single_batch": 0.01655991560612206,
+    "touch_mean": 3.569069069069069,
+    "touch_max": 35,
+    "touch_over_n_mean": 0.0010727589627499456,
+    "n_stream_steps": 666,
+    "max_W_inc_vs_batch_full_graph": 0.7577891501424084,
+    "max_W_stream_vs_batch_subgraph": 0.0,
+    "best_alpha": 5.0,
+    "alpha_grid": [
+      {
+        "name": "INRS_hybrid_a0.5",
+        "val_acc": 0.6499999761581421,
+        "test_acc": 0.5379999876022339,
+        "train_time_s": 6.559898138046265,
+        "alpha": 0.5
+      },
+      {
+        "name": "INRS_hybrid_a1.0",
+        "val_acc": 0.6520000100135803,
+        "test_acc": 0.531000018119812,
+        "train_time_s": 6.799655199050903,
+        "alpha": 1.0
+      },
+      {
+        "name": "INRS_hybrid_a2.0",
+        "val_acc": 0.656000018119812,
+        "test_acc": 0.5350000262260437,
+        "train_time_s": 9.390736103057861,
+        "alpha": 2.0
+      },
+      {
+        "name": "INRS_hybrid_a5.0",
+        "val_acc": 0.6579999923706055,
+        "test_acc": 0.5170000195503235,
+        "train_time_s": 9.389181137084961,
+        "alpha": 5.0
+      }
+    ],
+    "models": {
+      "GCN_plain": {
+        "name": "GCN_plain",
+        "val_acc": 0.6480000019073486,
+        "test_acc": 0.5189999938011169,
+        "train_time_s": 6.587384939193726
+      },
+      "RG_GCN_static": {
+        "name": "RG_GCN_static",
+        "val_acc": 0.6480000019073486,
+        "test_acc": 0.531000018119812,
+        "train_time_s": 6.5940961837768555
+      },
+      "INRS_hybrid_best": {
+        "name": "INRS_hybrid_a5.0",
+        "val_acc": 0.6579999923706055,
+        "test_acc": 0.5170000195503235,
+        "train_time_s": 9.389181137084961,
+        "alpha": 5.0
+      },
+      "INRS_hybrid_inc": {
+        "name": "INRS_hybrid_inc_a5.0",
+        "val_acc": 0.6679999828338623,
+        "test_acc": 0.5109999775886536,
+        "train_time_s": 8.912108898162842
+      },
+      "INRS_psi_only": {
+        "name": "INRS_psi_only",
+        "val_acc": 0.5720000267028809,
+        "test_acc": 0.19499999284744263,
+        "train_time_s": 6.791344881057739
+      }
+    },
+    "summary": {
+      "GCN_plain_test": 0.5189999938011169,
+      "RG_GCN_static_test": 0.531000018119812,
+      "INRS_hybrid_best_test": 0.5170000195503235,
+      "INRS_hybrid_inc_test": 0.5109999775886536,
+      "INRS_psi_only_test": 0.19499999284744263,
+      "hybrid_vs_plain_delta": -0.001999974250793457,
+      "hybrid_vs_rg_delta": -0.013999998569488525
+    }
+  }
+]

@@ -1,0 +1,101 @@
+dataset,method,seed,test_acc,val_acc,alpha
+Cora,GCN-plain,42,0.7990,0.7860,
+Cora,RG-GCN-static (simplified),42,0.7300,0.7240,
+Cora,INRS-psi-only,42,0.6240,0.6260,
+Cora,INRS-hybrid-grid,42,0.8100,0.8020,5.0
+Cora,INRS-hybrid-learned,42,0.8160,0.7860,
+Cora,GCN-plain,0,0.8100,0.7980,
+Cora,RG-GCN-static (simplified),0,0.7270,0.7100,
+Cora,INRS-psi-only,0,0.6390,0.6340,
+Cora,INRS-hybrid-grid,0,0.8070,0.7980,5.0
+Cora,INRS-hybrid-learned,0,0.8090,0.7940,
+Cora,GCN-plain,1,0.8090,0.8020,
+Cora,RG-GCN-static (simplified),1,0.7420,0.7420,
+Cora,INRS-psi-only,1,0.6590,0.6520,
+Cora,INRS-hybrid-grid,1,0.8040,0.7980,0.5
+Cora,INRS-hybrid-learned,1,0.8100,0.7960,
+Cora,GCN-plain,2,0.8070,0.7940,
+Cora,RG-GCN-static (simplified),2,0.7360,0.7040,
+Cora,INRS-psi-only,2,0.6450,0.6380,
+Cora,INRS-hybrid-grid,2,0.8170,0.8040,5.0
+Cora,INRS-hybrid-learned,2,0.8190,0.8000,
+Cora,GCN-plain,3,0.8090,0.7920,
+Cora,RG-GCN-static (simplified),3,0.7470,0.7220,
+Cora,INRS-psi-only,3,0.6360,0.6340,
+Cora,INRS-hybrid-grid,3,0.8080,0.7920,1.0
+Cora,INRS-hybrid-learned,3,0.8000,0.7880,
+Cora,GCN-plain,4,0.8050,0.8020,
+Cora,RG-GCN-static (simplified),4,0.7390,0.7220,
+Cora,INRS-psi-only,4,0.6510,0.6240,
+Cora,INRS-hybrid-grid,4,0.8030,0.8080,1.0
+Cora,INRS-hybrid-learned,4,0.8160,0.8060,
+Cora,GCN-plain,5,0.8000,0.7900,
+Cora,RG-GCN-static (simplified),5,0.7300,0.7260,
+Cora,INRS-psi-only,5,0.6350,0.6200,
+Cora,INRS-hybrid-grid,5,0.7950,0.8000,1.0
+Cora,INRS-hybrid-learned,5,0.8020,0.7940,
+Cora,GCN-plain,6,0.8140,0.7920,
+Cora,RG-GCN-static (simplified),6,0.7510,0.7340,
+Cora,INRS-psi-only,6,0.6670,0.6360,
+Cora,INRS-hybrid-grid,6,0.8110,0.7900,0.5
+Cora,INRS-hybrid-learned,6,0.8010,0.7900,
+Cora,GCN-plain,7,0.8190,0.8000,
+Cora,RG-GCN-static (simplified),7,0.7410,0.7400,
+Cora,INRS-psi-only,7,0.6300,0.6240,
+Cora,INRS-hybrid-grid,7,0.8240,0.8000,0.5
+Cora,INRS-hybrid-learned,7,0.8190,0.7980,
+Cora,GCN-plain,8,0.7980,0.8000,
+Cora,RG-GCN-static (simplified),8,0.7430,0.7280,
+Cora,INRS-psi-only,8,0.6460,0.6360,
+Cora,INRS-hybrid-grid,8,0.8110,0.8060,1.0
+Cora,INRS-hybrid-learned,8,0.8100,0.8020,
+CiteSeer,GCN-plain,42,0.7210,0.7180,
+CiteSeer,RG-GCN-static (simplified),42,0.7090,0.7200,
+CiteSeer,INRS-psi-only,42,0.5830,0.6020,
+CiteSeer,INRS-hybrid-grid,42,0.7190,0.7220,1.0
+CiteSeer,INRS-hybrid-learned,42,0.7210,0.7160,
+CiteSeer,GCN-plain,0,0.7160,0.7340,
+CiteSeer,RG-GCN-static (simplified),0,0.7100,0.7220,
+CiteSeer,INRS-psi-only,0,0.6250,0.6180,
+CiteSeer,INRS-hybrid-grid,0,0.7170,0.7340,0.5
+CiteSeer,INRS-hybrid-learned,0,0.7160,0.7300,
+CiteSeer,GCN-plain,1,0.7200,0.7280,
+CiteSeer,RG-GCN-static (simplified),1,0.7050,0.7060,
+CiteSeer,INRS-psi-only,1,0.5920,0.5960,
+CiteSeer,INRS-hybrid-grid,1,0.7150,0.7280,0.5
+CiteSeer,INRS-hybrid-learned,1,0.7170,0.7320,
+CiteSeer,GCN-plain,2,0.7200,0.7200,
+CiteSeer,RG-GCN-static (simplified),2,0.7040,0.7120,
+CiteSeer,INRS-psi-only,2,0.5980,0.5920,
+CiteSeer,INRS-hybrid-grid,2,0.7250,0.7240,1.0
+CiteSeer,INRS-hybrid-learned,2,0.7230,0.7240,
+CiteSeer,GCN-plain,3,0.7160,0.7280,
+CiteSeer,RG-GCN-static (simplified),3,0.7040,0.7200,
+CiteSeer,INRS-psi-only,3,0.6130,0.6160,
+CiteSeer,INRS-hybrid-grid,3,0.7190,0.7280,1.0
+CiteSeer,INRS-hybrid-learned,3,0.7190,0.7260,
+CiteSeer,GCN-plain,4,0.7160,0.7240,
+CiteSeer,RG-GCN-static (simplified),4,0.6940,0.7060,
+CiteSeer,INRS-psi-only,4,0.5720,0.5800,
+CiteSeer,INRS-hybrid-grid,4,0.7120,0.7240,0.5
+CiteSeer,INRS-hybrid-learned,4,0.7070,0.7200,
+CiteSeer,GCN-plain,5,0.7160,0.7320,
+CiteSeer,RG-GCN-static (simplified),5,0.6940,0.7060,
+CiteSeer,INRS-psi-only,5,0.5900,0.5980,
+CiteSeer,INRS-hybrid-grid,5,0.7160,0.7360,0.5
+CiteSeer,INRS-hybrid-learned,5,0.7140,0.7340,
+CiteSeer,GCN-plain,6,0.7080,0.7420,
+CiteSeer,RG-GCN-static (simplified),6,0.6980,0.7240,
+CiteSeer,INRS-psi-only,6,0.5860,0.5960,
+CiteSeer,INRS-hybrid-grid,6,0.7090,0.7420,0.5
+CiteSeer,INRS-hybrid-learned,6,0.7160,0.7340,
+CiteSeer,GCN-plain,7,0.7000,0.7140,
+CiteSeer,RG-GCN-static (simplified),7,0.6870,0.6840,
+CiteSeer,INRS-psi-only,7,0.5640,0.5760,
+CiteSeer,INRS-hybrid-grid,7,0.6980,0.7140,1.0
+CiteSeer,INRS-hybrid-learned,7,0.6960,0.7140,
+CiteSeer,GCN-plain,8,0.7060,0.7200,
+CiteSeer,RG-GCN-static (simplified),8,0.7020,0.7020,
+CiteSeer,INRS-psi-only,8,0.5830,0.5920,
+CiteSeer,INRS-hybrid-grid,8,0.7120,0.7240,1.0
+CiteSeer,INRS-hybrid-learned,8,0.7160,0.7200,

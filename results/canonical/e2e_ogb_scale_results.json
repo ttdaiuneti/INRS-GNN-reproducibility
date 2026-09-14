@@ -1,0 +1,29 @@
+{
+  "dataset": "ogbn-arxiv",
+  "n_total": 169343,
+  "n_active": 135474,
+  "n_features": 128,
+  "n_edges": 1157799,
+  "k_inserts": 20,
+  "seed": 0,
+  "block": 2048,
+  "inc_delta_ms_mean": 13.606695899999366,
+  "inc_delta_ms_std": 1.707966204375807,
+  "inc_w_ms_mean": 14.601931349998765,
+  "inc_w_ms_std": 22.96831412596006,
+  "inc_total_ms": 28.20862724999813,
+  "batch_delta_s": 45.820861416999996,
+  "batch_w_ms": 933.555417000001,
+  "batch_total_s": 46.754416834,
+  "speedup_end_to_end": 1657.4509783705655,
+  "touch_mean": 16.55,
+  "s_delta_mean": 1.25,
+  "spot_check_max_w_diff": 2.220446049250313e-16,
+  "dense_delta_matrix_gb": 146.825637408,
+  "dense_adj_matrix_gb": 28.677051649,
+  "env": {
+    "numpy": "2.0.2",
+    "scipy": "1.13.1",
+    "platform": "macOS-26.5.1-arm64-arm-64bit"
+  }
+}

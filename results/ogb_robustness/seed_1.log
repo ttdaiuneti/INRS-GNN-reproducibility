@@ -1,0 +1,13 @@
+numpy=2.0.2 scipy=1.13.1 platform=macOS-26.6.2-arm64-arm-64bit
+ogbn-arxiv: |V|=169343 |B|=128 |E|=1157799
+  initial batch delta (|V|=135474): 45.1 s
+  initial batch W (|E|=744774): 1.04 s
+  [anchor t=0] |V|=135474 batch delta 44.8s + W 1.03s | maintained state: max|dd|=0.000e+00, inf mismatch=0, max|dW| over 744774 edges = 0.000e+00
+  [anchor t=500] |V|=135974 batch delta 46.0s + W 0.93s | maintained state: max|dd|=7.438e-15, inf mismatch=0, max|dW| over 750319 edges = 1.776e-15
+  [anchor t=1000] |V|=136474 batch delta 45.9s + W 1.04s | maintained state: max|dd|=1.055e-14, inf mismatch=0, max|dW| over 755286 edges = 2.998e-15
+
+per-insertion total: mean 36.2 ms (median 13.7, p90 110.3, max 340.8)
+  delta 12.8 | W 12.2 | bookkeeping 11.3 ms
+batch anchor at end: 46.9 s  ->  speedup 1295x
+peak RSS 19.9 GB
+[PASS] 3 checkpoints verified within tol 1e-09 (max|dd| 1.05e-14, max|dW| 3.00e-15, 0 inf mismatches, W symmetric); wrote /Users/tranthanhdai/Documents/2026/Phd-Dai/INRS-GNN/experiments/ogb_robustness/results/seed_1.json

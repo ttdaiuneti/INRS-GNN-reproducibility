@@ -1,0 +1,4 @@
+Variant,Cora,CiteSeer
+GCN-plain,80.70 $\pm$ 0.64,71.39 $\pm$ 0.66
+INRS-psi-only,64.32 $\pm$ 1.25,59.06 $\pm$ 1.71
+INRS-hybrid-grid,80.90 $\pm$ 0.75,71.42 $\pm$ 0.69

@@ -1,0 +1,7 @@
+dataset,method,test_mean,test_std
+Cora,GCN-plain,80.700,0.639
+Cora,INRS-hybrid-grid,80.900,0.748
+Cora,INRS-hybrid-learned,81.020,0.693
+CiteSeer,GCN-plain,71.390,0.658
+CiteSeer,INRS-hybrid-grid,71.420,0.688
+CiteSeer,INRS-hybrid-learned,71.450,0.739

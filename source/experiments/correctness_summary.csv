@@ -1,0 +1,6 @@
+Check,Setting,Result
+$\delta$ incremental vs. batch,"400-node subgraph, 80 inserts, $|B|{=}50$",$\max|\Delta\delta| = 0$
+Granule sizes,"Same",$\max \Delta = 0$
+Rough weights (touch set only),"Same",$\max|\Delta w| = 0$
+$\delta$ incremental vs. batch,"Cora / CiteSeer, full graph, full $|B|$",$\max|\Delta\delta| = 0$
+Full $W^{\mathrm{rough}}$ (all pairs),"Cora / CiteSeer, full graph, full $|B|$",$\max|W_{\mathrm{inc}}-W_{\mathrm{batch}}| = 0$

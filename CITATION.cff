@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software or artifact package, please cite the associated manuscript."
+title: "INRS-GNN: Incremental Maintenance of Neighborhood Rough Set Structure on Evolving Graphs"
+type: software
+authors:
+  - family-names: Tran
+    given-names: Thanh Dai
+repository-code: "https://github.com/ttdaiuneti/INRS-GNN"
+url: "https://github.com/ttdaiuneti/INRS-GNN/tree/main/reproducibility"
+date-released: 2026-09-14
+

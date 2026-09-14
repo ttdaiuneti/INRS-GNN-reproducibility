@@ -1,0 +1,48 @@
+{
+  "target": {
+    "V": 169343,
+    "B": 128,
+    "E": 583121
+  },
+  "fits": {
+    "batch_delta": {
+      "exponent": 0.937,
+      "const": 6.0683166429017e-08,
+      "resid_sd": 1.363,
+      "proj_ms": 36214.36626656316,
+      "proj_lo_ms": 2506.622887177849,
+      "proj_hi_ms": 523206.0757114342
+    },
+    "inc_delta": {
+      "exponent": 0.99,
+      "const": 1.1130881316588318e-06,
+      "resid_sd": 0.242,
+      "proj_ms": 20.23653207893958,
+      "proj_lo_ms": 12.585167970958395,
+      "proj_hi_ms": 32.53967142329407
+    },
+    "batch_W": {
+      "exponent": 0.927,
+      "const": 6.041314531765581e-05,
+      "resid_sd": 1.349,
+      "proj_ms": 1201.201318522726,
+      "proj_lo_ms": 85.39531655684148,
+      "proj_hi_ms": 16896.530931650235
+    },
+    "inc_W_dense": {
+      "exponent": 1.158,
+      "const": 1.7656051381650164e-05,
+      "resid_sd": 0.291,
+      "proj_ms": 129.92533812956168,
+      "proj_lo_ms": 73.45697438081739,
+      "proj_hi_ms": 229.8024609694399
+    }
+  },
+  "projected_inc_total_ms": 150.16187020850126,
+  "projected_batch_total_ms": 37415.56758508588,
+  "projected_speedup_end_to_end": 249.16823114372505,
+  "projected_delta_only_ratio": 1789.5539673149788,
+  "dense_delta_matrix_gb": 229.416413192,
+  "dense_adj_matrix_gb": 28.677051649,
+  "note": "Batch per-insertion recomputation at this scale also requires a 169343x169343 distance working set (229 GB fp64) / dense adjacency (29 GB), infeasible on commodity hardware independent of the timing fit."
+}

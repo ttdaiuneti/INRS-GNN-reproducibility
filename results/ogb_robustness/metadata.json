@@ -1,0 +1,36 @@
+{
+  "started_utc": "2026-09-11T04:59:44.384441+00:00",
+  "source_hashes": {
+    "experiments/ogb_robustness/protocol.json": "a27f8c3a33d04144b9722cd1405ab4709d6c7601149054357f8a707d2ed6b61b",
+    "experiments/ogb_robustness/run.py": "1ed1980a2bcfcb9f23e4cc94bead130aba9fd0439775465f4b52d216808e4d39",
+    "experiments/ogb_robustness/stable_batch.py": "d2eda628f4927b1c3ee331d6868bf8a59fbb7cc9d8438001eb43dcae8d7bf2a0",
+    "experiments/ogb_robustness/test_stable_batch.py": "dc39bebea3a952812f8c8f866910a0eba9005e11154a50e994cf8b19d0306dbb",
+    "experiments/e2e_ogb_stream.py": "4dcc48d6b722ea4dc8ed2098b687e203d1da44bccc656eaef365d0780983b8d9",
+    "shared/theory/incremental_nrs.py": "9ad0377de2bcb0b1a168929e8fa8b832704a5311aa7f75846cef8ce79aa1a27d",
+    "theory/incremental_rough_adjacency.py": "f4a6edc22773dcd40bb00de85e58cd8d68eb81e4987ca34c90cbba101ecbd08e"
+  },
+  "input_hashes": {
+    "shared/data/ogb/arxiv_X.npy": "fdb507bf68c08e17ac1d5760f27cba520029ce7ee74845c38211f347d38e0a49",
+    "shared/data/ogb/arxiv_y.npy": "c8dd0692e9d38bb138be13691546d3953422d93c763ff7a46c3ee7895e40fbb6",
+    "shared/data/ogb/arxiv_edge_index.npy": "aab407d7d75cbf0a296a7ed7007bf75f0466e3f6c90d76e945aa03a6c09d6997"
+  },
+  "python": "3.9.6 (default, May 22 2026, 11:13:45) \n[Clang 21.0.0 (clang-2100.1.1.101)]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "thread_environment": {
+    "OMP_NUM_THREADS": null,
+    "OPENBLAS_NUM_THREADS": null,
+    "VECLIB_MAXIMUM_THREADS": null
+  },
+  "completed_seeds": [
+    0,
+    1,
+    2
+  ],
+  "finished_utc": "2026-09-11T05:10:56.881232+00:00",
+  "completed": true,
+  "result_hashes": {
+    "seed_0.json": "abd5608e6503a937add6065b3a04e800cd8b584558e7246fc48160130eab43a5",
+    "seed_1.json": "b1278220899f154dbfab6aa5fbba0c8f616c6c3f82a2b8e0e1293bd436ad6481",
+    "seed_2.json": "c60c4ce71605b3b4dcffd01c1e222fd01c6c11bef53eb90dc32afe361a569dd9"
+  }
+}

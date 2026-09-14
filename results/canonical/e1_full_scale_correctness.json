@@ -1,0 +1,26 @@
+[
+  {
+    "dataset": "cora",
+    "n_nodes_final": 2708,
+    "n_features_B": 1433,
+    "n_stream_steps": 542,
+    "delta_definition": "oracle (Theorem 1-3 hypotheses, Assumption 4a)",
+    "max_delta_diff_inc_vs_batch": 0.0,
+    "max_W_diff_inc_vs_batch_full_matrix": 0.0,
+    "stream_time_s": 3.8245089054107666,
+    "final_batch_rebuild_time_s": 3.430989980697632,
+    "note": "Compares the entire n x n W matrix (all pairs), not only entries in the touched set T_adj, directly testing Theorem 3 / Corollary 1 at full graph scale with a single consistent (oracle) delta definition throughout."
+  },
+  {
+    "dataset": "citeseer",
+    "n_nodes_final": 3327,
+    "n_features_B": 3703,
+    "n_stream_steps": 666,
+    "delta_definition": "oracle (Theorem 1-3 hypotheses, Assumption 4a)",
+    "max_delta_diff_inc_vs_batch": 0.0,
+    "max_W_diff_inc_vs_batch_full_matrix": 0.0,
+    "stream_time_s": 29.887043952941895,
+    "final_batch_rebuild_time_s": 25.771579027175903,
+    "note": "Compares the entire n x n W matrix (all pairs), not only entries in the touched set T_adj, directly testing Theorem 3 / Corollary 1 at full graph scale with a single consistent (oracle) delta definition throughout."
+  }
+]
