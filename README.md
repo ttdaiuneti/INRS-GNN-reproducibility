@@ -6,7 +6,7 @@ Structure on Evolving Graphs: Locality Guarantees and Efficient Updates.”**
 
 Permanent repository location:
 
-<https://github.com/ttdaiuneti/INRS-GNN/tree/main/reproducibility>
+<https://github.com/ttdaiuneti/INRS-GNN-reproducibility>
 
 ## Contents
 
@@ -111,4 +111,3 @@ the paper's claims do not depend on downloaded result files or private data.
 
 The repository currently carries no open-source licence. Copyright remains
 with the author; the package is public for peer review and reproducibility.
-

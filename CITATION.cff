@@ -5,7 +5,6 @@ type: software
 authors:
   - family-names: Tran
     given-names: Thanh Dai
-repository-code: "https://github.com/ttdaiuneti/INRS-GNN"
-url: "https://github.com/ttdaiuneti/INRS-GNN/tree/main/reproducibility"
+repository-code: "https://github.com/ttdaiuneti/INRS-GNN-reproducibility"
+url: "https://github.com/ttdaiuneti/INRS-GNN-reproducibility"
 date-released: 2026-09-14
-
