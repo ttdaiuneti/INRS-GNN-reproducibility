@@ -34,7 +34,7 @@ _ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 _ws = _ROOT
 sys.path.insert(0, os.path.join(_ws, "shared"))
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
-from experiments.e0_gnn_prototype import (
+from core.gnn import (
     GCN,
     EPOCHS,
     HIDDEN,
@@ -47,11 +47,11 @@ from experiments.e0_gnn_prototype import (
     train_gcn,
     train_warmup_pseudolabels,
 )
-from experiments.e2_tune_timing import HybridGCN, train_hybrid_gcn
-from experiments.graph_data import load_planetoid_pyg, verify_pyg_masks, PYG_NAME_MAP
-from theory.incremental_rough_adjacency import batch_rg_adjacency
-from theory.rough_neighborhood_partition import build_trusted_labels
-from theory.torch_nrs_mps import (
+from core.hybrid import HybridGCN, train_hybrid_gcn
+from core.data import load_planetoid_pyg, verify_pyg_masks, PYG_NAME_MAP
+from core.rough_adjacency import batch_rg_adjacency
+from core.rough_partition import build_trusted_labels
+from core.torch_nrs import (
     batch_rough_adjacency_torch,
     calc_deltas_torch_trusted,
     get_device,

@@ -28,7 +28,7 @@ def calc_deltas_torch(X, y, device=None):
     """
     n, d = X.shape[0], X.shape[1]
     if _use_rowwise(n, d):
-        from theory.incremental_nrs import calc_deltas_rowwise
+        from core.incremental_nrs import calc_deltas_rowwise
         return torch.as_tensor(calc_deltas_rowwise(X, y), dtype=torch.float32)
 
     device = device or get_device()
@@ -50,12 +50,12 @@ def calc_deltas_torch_trusted(X, y_hat, trusted, device=None):
     claimed enemy), which batch_rough_adjacency_torch already maps to ψ=0 for
     any edge touching them — i.e. unlabeled/unsure nodes contribute no rough
     signal instead of leaking their held-out ground truth. Mirrors
-    theory.rough_neighborhood_partition.calc_deltas_trusted (Paper 2), ported to
+    core.rough_partition.calc_deltas_trusted (Paper 2), ported to
     torch for GPU parity with calc_deltas_torch.
     """
     n, d = X.shape[0], X.shape[1]
     if _use_rowwise(n, d):
-        from theory.rough_neighborhood_partition import calc_deltas_trusted
+        from core.rough_partition import calc_deltas_trusted
         deltas_np = calc_deltas_trusted(X, np.asarray(y_hat), np.asarray(trusted))
         return torch.as_tensor(deltas_np, dtype=torch.float32)
 
@@ -83,8 +83,8 @@ def batch_rough_adjacency_torch(X, y, deltas, adj, device=None, eps=1e-9):
     """
     n, d = X.shape[0], X.shape[1]
     if _use_rowwise(n, d):
-        from theory.incremental_nrs import calc_deltas_rowwise
-        from theory.incremental_rough_adjacency import batch_rough_adjacency
+        from core.incremental_nrs import calc_deltas_rowwise
+        from core.rough_adjacency import batch_rough_adjacency
 
         if torch.is_tensor(deltas):
             deltas_np = deltas.detach().cpu().numpy()
@@ -116,8 +116,8 @@ def batch_rough_adjacency_torch(X, y, deltas, adj, device=None, eps=1e-9):
 def time_cpu_vs_mps_build(X, y, adj, repeats=3):
     """Benchmark numpy vs MPS rough matrix build."""
     import time
-    from theory.incremental_nrs import calc_deltas
-    from theory.incremental_rough_adjacency import batch_rough_adjacency
+    from core.incremental_nrs import calc_deltas
+    from core.rough_adjacency import batch_rough_adjacency
 
     B_cols = np.arange(X.shape[1])
     times_cpu = []

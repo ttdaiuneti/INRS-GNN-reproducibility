@@ -6,12 +6,14 @@ from pathlib import Path
 import numpy as np
 import scipy
 from scipy.sparse import csr_matrix,block_diag
-ROOT=Path(__file__).resolve().parents[2]
+ROOT=Path(__file__).resolve().parent.parent
 sys.path.insert(0,str(ROOT/'shared'));sys.path.insert(0,str(ROOT))
-from theory.incremental_nrs import calc_deltas_rowwise,calc_deltas_vectorized,incremental_insert
-from theory.incremental_rough_adjacency import incremental_rough_adjacency_update_sparse,batch_rough_adjacency_edgelist,nrs_psi
+from core.incremental_nrs import calc_deltas_rowwise,calc_deltas_vectorized,incremental_insert
+from core.rough_adjacency import incremental_rough_adjacency_update_sparse,batch_rough_adjacency_edgelist,nrs_psi
 HERE=Path(__file__).resolve().parent
-P=json.loads((HERE/'protocol.json').read_text())
+P={'sizes':[256,1024,2048],'seeds':[0,1,2,3,4],'repetitions':5,
+   'features':16,'scenarios':['ring_control','ring_enemy','star_leaf','star_hub'],
+   'tolerance':1e-9}
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def construct(n,seed,scenario):
  rng=np.random.default_rng(seed); y=np.repeat([0,1],n//2); X=rng.normal(0,.02,(n,P['features'])); X[y==1,0]+=10
@@ -57,7 +59,7 @@ def validate(state,bat,n,scenario):
  return dict(shrink=len(S),touch=len(T),q_touch=q,edges_updated=changed_edges,edges_total=len(support)//2,delta_error=err,weight_error=werr,symmetry_error=sym,batch_delta_error=berr,batch_weight_error=bwerr,correctness_pass=True)
 def main():
  out=HERE/'results';out.mkdir(exist_ok=False)
- meta={'started_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'protocol_sha256':sha(HERE/'protocol.json'),'script_sha256':sha(Path(__file__)),'python':sys.version,'platform':platform.platform(),'numpy':np.__version__,'scipy':scipy.__version__,'threads':{k:os.environ[k] for k in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','VECLIB_MAXIMUM_THREADS')},'source_sha256':{str(p.relative_to(ROOT)):sha(p) for p in [ROOT/'shared/theory/incremental_nrs.py',ROOT/'theory/incremental_rough_adjacency.py']}}
+ meta={'started_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'script_sha256':sha(Path(__file__)),'python':sys.version,'platform':platform.platform(),'numpy':np.__version__,'scipy':scipy.__version__,'threads':{k:os.environ[k] for k in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','VECLIB_MAXIMUM_THREADS')},'source_sha256':{str(p.relative_to(ROOT)):sha(p) for p in [ROOT/'core/incremental_nrs.py',ROOT/'core/rough_adjacency.py']}}
  (out/'metadata.json').write_text(json.dumps(meta,indent=2))
  with (out/'raw_results.csv').open('w') as f:
   writer=None

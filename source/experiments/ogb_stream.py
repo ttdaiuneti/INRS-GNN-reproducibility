@@ -36,17 +36,17 @@ import numpy as np
 import scipy
 from scipy.sparse import csr_matrix
 
-_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
+_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.insert(0, os.path.join(_ROOT, "shared"))
 sys.path.insert(0, _ROOT)
-from theory.incremental_nrs import calc_deltas_blocked  # noqa: E402
-from theory.incremental_rough_adjacency import (  # noqa: E402
+from core.incremental_nrs import calc_deltas_blocked  # noqa: E402
+from core.rough_adjacency import (  # noqa: E402
     batch_rough_adjacency_edgelist,
     incremental_rough_adjacency_update_sparse,
 )
 
-OGB_DIR = os.path.join(_ROOT, "shared", "data", "ogb")
-OUT = os.path.join(_ROOT, "experiments", "results", "e2e_ogb_stream_results.json")
+OGB_DIR = os.path.join(_ROOT, "data", "ogb")
+OUT = os.path.join(_ROOT, "results", "e2e_ogb_stream_results.json")
 INIT_FRAC = 0.8
 K_INSERTS = 200
 CHECKPOINTS = (0, 100, 200)   # insertions completed when a batch anchor is taken
@@ -171,21 +171,6 @@ def main():
         assert not np.isnan(w_arr).any(), f"{tag}: NaN in maintained W"
         assert inf_mismatch == 0, (
             f"{tag}: {inf_mismatch} nodes disagree on finite/infinite radius")
-        if d_diff > CHECK_TOL or w_diff > CHECK_TOL:
-            bad = np.flatnonzero(finite & (np.abs(d_ref - deltas[:m]) > CHECK_TOL))
-            diagnostic = []
-            for idx in bad:
-                dist = np.sqrt(np.sum((Xp[:m] - Xp[idx]) ** 2, axis=1))
-                dist[yp[:m] == yp[idx]] = np.inf
-                enemy_idx = int(np.argmin(dist))
-                diagnostic.append(dict(node=int(idx), nearest_enemy=enemy_idx,
-                    direct_radius=float(dist[enemy_idx]), gram_radius=float(d_ref[idx]),
-                    maintained_radius=float(deltas[idx]),
-                    features_equal=bool(np.array_equal(Xp[idx], Xp[enemy_idx]))))
-            with open(OUT + '.failure.json', 'w') as failure:
-                json.dump(dict(tag=tag, delta_diff=d_diff, weight_diff=w_diff,
-                    diagnostic=diagnostic, records=records, anchors=anchors, checks=checks), failure, indent=2)
-            print('FAILURE DIAGNOSTICS', diagnostic, flush=True)
         assert d_diff <= CHECK_TOL, f"{tag}: max|dd|={d_diff:.3e} > {CHECK_TOL:.0e}"
         assert w_diff <= CHECK_TOL, f"{tag}: max|dW|={w_diff:.3e} > {CHECK_TOL:.0e}"
         assert n_checked == ev2.size, (

@@ -6,7 +6,7 @@ using NRS safety radii δ_B and granules G_B — static batch on full graph.
 """
 import numpy as np
 
-from theory.incremental_nrs import calc_deltas
+from core.incremental_nrs import calc_deltas
 
 
 def pairwise_dist(X):

@@ -8,7 +8,7 @@ review_opus_round2.md:
     loop. This script adds batch_rough_adjacency_vectorized (bit-identical,
     edge-list NumPy) as a matched comparator for the W step.
   - E2-R2 (R2): fixing only batch W left the end-to-end headline resting on
-    batch DELTA, which was still theory.incremental_nrs.calc_deltas ->
+    batch DELTA, which was still core.incremental_nrs.calc_deltas ->
     calc_deltas_rowwise, a Python row loop that is 94-99% of batch cost. This
     script now also times calc_deltas_vectorized (one BLAS GEMM, bit-compatible
     -- see test_batch_delta_vectorized_matches.py) as the fair batch-delta
@@ -39,13 +39,13 @@ _ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 _ws = _ROOT
 sys.path.insert(0, os.path.join(_ws, "shared"))
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
-from experiments.graph_data import load_planetoid
-from theory.incremental_nrs import (
+from core.data import load_planetoid
+from core.incremental_nrs import (
     calc_deltas,
     calc_deltas_vectorized,
     incremental_insert,
 )
-from theory.incremental_rough_adjacency import (
+from core.rough_adjacency import (
     batch_rough_adjacency,
     batch_rough_adjacency_vectorized,
     incremental_rough_adjacency_update,

@@ -30,9 +30,9 @@ _ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 _ws = _ROOT
 sys.path.insert(0, os.path.join(_ws, "shared"))
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
-from experiments.graph_data import load_planetoid
-from theory.incremental_nrs import calc_deltas, incremental_insert
-from theory.incremental_rough_adjacency import (
+from core.data import load_planetoid
+from core.incremental_nrs import calc_deltas, incremental_insert
+from core.rough_adjacency import (
     batch_rough_adjacency,
     incremental_rough_adjacency_update,
     structural_touch_set,

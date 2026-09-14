@@ -16,18 +16,18 @@ _ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 _ws = _ROOT
 sys.path.insert(0, os.path.join(_ws, "shared"))
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
-from experiments.graph_data import (
+from core.data import (
     build_feature_matrix,
     load_planetoid,
     planetoid_train_test_masks,
     select_top_variance_features,
 )
-from experiments.graph_rough import (
+from core.graph_rough import (
     build_rough_adjacency_stream_tuple,
     remap_adjacency_to_original,
 )
-from theory.rough_neighborhood_partition import build_trusted_labels
-from theory.torch_nrs_mps import (
+from core.rough_partition import build_trusted_labels
+from core.torch_nrs import (
     batch_rough_adjacency_torch,
     calc_deltas_torch,
     calc_deltas_torch_trusted,

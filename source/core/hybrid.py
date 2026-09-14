@@ -17,7 +17,7 @@ _ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 _ws = _ROOT
 sys.path.insert(0, os.path.join(_ws, "shared"))
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
-from experiments.e0_gnn_prototype import (
+from core.gnn import (
     EPOCHS,
     HIDDEN,
     INIT_FRAC,
@@ -28,12 +28,12 @@ from experiments.e0_gnn_prototype import (
     normalize_adj,
     set_seed,
 )
-from experiments.graph_data import (
+from core.data import (
     load_planetoid,
     planetoid_train_test_masks,
 )
-from experiments.graph_rough import profile_stream_insert_timings
-from theory.torch_nrs_mps import batch_rough_adjacency_torch, get_device
+from core.graph_rough import profile_stream_insert_timings
+from core.torch_nrs import batch_rough_adjacency_torch, get_device
 
 DATASETS = ["cora", "citeseer"]
 PCA_DIM = 256

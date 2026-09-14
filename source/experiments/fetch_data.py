@@ -25,7 +25,7 @@ import sys
 import numpy as np
 
 _ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-DATA = os.path.join(_ROOT, "shared", "data")
+DATA = os.path.join(_ROOT, "core", "data")
 OGB_DIR = os.path.join(DATA, "ogb")
 
 # Digests of the arrays behind every ogbn-arxiv number reported in the paper.

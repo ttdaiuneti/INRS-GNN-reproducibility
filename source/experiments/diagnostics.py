@@ -24,16 +24,16 @@ _ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.insert(0, os.path.join(_ROOT, "shared"))
 sys.path.insert(0, _ROOT)
 
-from experiments.e0_gnn_prototype import (  # noqa: E402
+from core.gnn import (  # noqa: E402
     SEED,
     normalize_adj,
     set_seed,
     train_warmup_pseudolabels,
 )
-from experiments.e3_pyg_aligned_benchmark import DATASETS, HIDDEN_DIM, TRUSTED_TAU  # noqa: E402
-from experiments.graph_data import load_planetoid_pyg  # noqa: E402
-from theory.rough_neighborhood_partition import build_trusted_labels  # noqa: E402
-from theory.torch_nrs_mps import (  # noqa: E402
+from experiments.accuracy import DATASETS, HIDDEN_DIM, TRUSTED_TAU  # noqa: E402
+from core.data import load_planetoid_pyg  # noqa: E402
+from core.rough_partition import build_trusted_labels  # noqa: E402
+from core.torch_nrs import (  # noqa: E402
     batch_rough_adjacency_torch,
     calc_deltas_torch_trusted,
     get_device,

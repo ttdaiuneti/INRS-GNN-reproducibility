@@ -3,8 +3,8 @@ import time
 
 import numpy as np
 
-from theory.incremental_nrs import calc_deltas, incremental_insert
-from theory.incremental_rough_adjacency import (
+from core.incremental_nrs import calc_deltas, incremental_insert
+from core.rough_adjacency import (
     batch_rough_adjacency,
     incremental_rough_adjacency_update,
     structural_touch_set,

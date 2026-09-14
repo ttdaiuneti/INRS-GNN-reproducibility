@@ -5,11 +5,11 @@ import numpy as np
 import scipy.sparse as sp
 import torch
 H=Path(__file__).resolve().parent
-R=H.parents[1]
+R=H.parent
 sys.path[:0]=[str(R),str(R/'shared')]
-from experiments.graph_data import load_planetoid_pyg
-from experiments.e0_gnn_prototype import GCN, train_gcn, set_seed
-from theory.incremental_rough_adjacency import incremental_rough_adjacency_update_sparse, batch_rough_adjacency_edgelist
+from core.data import load_planetoid_pyg
+from core.gnn import GCN, train_gcn, set_seed
+from core.rough_adjacency import incremental_rough_adjacency_update_sparse, batch_rough_adjacency_edgelist
 
 def normalized(a):
     a=sp.csr_matrix(a,dtype=np.float64)+sp.eye(a.shape[0],format='csr')
@@ -117,7 +117,7 @@ def run(name,seed,p,out):
 
 def main():
     p=json.loads((H/'protocol.json').read_text());out=H/'results';out.mkdir(exist_ok=False)
-    files=[H/'protocol.json',Path(__file__),R/'theory/incremental_rough_adjacency.py',R/'experiments/e0_gnn_prototype.py']
+    files=[H/'protocol.json',Path(__file__),R/'core/rough_adjacency.py',R/'core/gnn.py']
     meta={'started':datetime.datetime.now(datetime.timezone.utc).isoformat(),'source_hashes':{str(f.relative_to(R)):hashlib.sha256(f.read_bytes()).hexdigest() for f in files},'numpy':np.__version__,'torch':torch.__version__}
     (out/'metadata.json').write_text(json.dumps(meta,indent=2))
     checks=edge_cases();summaries=[]

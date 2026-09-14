@@ -6,11 +6,11 @@ import scipy.sparse as sp
 import torch
 import torch.nn.functional as F
 H=Path(__file__).resolve().parent
-R=H.parents[1]
+R=H.parent
 sys.path[:0]=[str(R),str(R/'shared')]
-from experiments.graph_data import load_planetoid_pyg
-from experiments.e0_gnn_prototype import GCN, set_seed
-from experiments.label_safe_stream.run import normalized, batch_radius, rebuild
+from core.data import load_planetoid_pyg
+from core.gnn import GCN, set_seed
+from experiments.label_safe_stream import normalized, batch_radius, rebuild
 
 def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
 def ah(a): return hashlib.sha256(np.ascontiguousarray(a).tobytes()).hexdigest()
@@ -111,7 +111,7 @@ def main():
     tests=checks(p)
     if args.check_only:print(tests);return
     out=H/'results';out.mkdir(exist_ok=True)
-    files=[H/'protocol.json',Path(__file__),R/'experiments/e0_gnn_prototype.py',R/'experiments/label_safe_stream/run.py',R/'shared/graph_data.py',R/'theory/incremental_rough_adjacency.py']
+    files=[H/'protocol.json',Path(__file__),R/'core/gnn.py',R/'experiments/label_safe_stream/run.py',R/'shared/graph_data.py',R/'core/rough_adjacency.py']
     hashes={str(f.relative_to(R)):sha(f) for f in files}
     meta={'started':stamp(),'source_hashes':hashes,'checks':tests,'torch':torch.__version__,'numpy':np.__version__,'completed':False}
     mp=out/'metadata.json'
