@@ -1,0 +1,176 @@
+{
+  "citation": [
+    {
+      "steps": 542,
+      "radius_mismatches": 0,
+      "granule_mismatches": 0,
+      "members_evicted": 109,
+      "granule_gains": 296,
+      "dataset": "cora",
+      "seed": 0
+    },
+    {
+      "steps": 542,
+      "radius_mismatches": 0,
+      "granule_mismatches": 0,
+      "members_evicted": 137,
+      "granule_gains": 128,
+      "dataset": "cora",
+      "seed": 1
+    },
+    {
+      "steps": 542,
+      "radius_mismatches": 0,
+      "granule_mismatches": 0,
+      "members_evicted": 165,
+      "granule_gains": 135,
+      "dataset": "cora",
+      "seed": 2
+    },
+    {
+      "steps": 542,
+      "radius_mismatches": 0,
+      "granule_mismatches": 0,
+      "members_evicted": 184,
+      "granule_gains": 215,
+      "dataset": "cora",
+      "seed": 3
+    },
+    {
+      "steps": 542,
+      "radius_mismatches": 0,
+      "granule_mismatches": 0,
+      "members_evicted": 29,
+      "granule_gains": 74,
+      "dataset": "cora",
+      "seed": 4
+    },
+    {
+      "steps": 666,
+      "radius_mismatches": 0,
+      "granule_mismatches": 0,
+      "members_evicted": 53,
+      "granule_gains": 898,
+      "dataset": "citeseer",
+      "seed": 0
+    },
+    {
+      "steps": 666,
+      "radius_mismatches": 0,
+      "granule_mismatches": 0,
+      "members_evicted": 69,
+      "granule_gains": 475,
+      "dataset": "citeseer",
+      "seed": 1
+    },
+    {
+      "steps": 666,
+      "radius_mismatches": 0,
+      "granule_mismatches": 0,
+      "members_evicted": 65,
+      "granule_gains": 694,
+      "dataset": "citeseer",
+      "seed": 2
+    },
+    {
+      "steps": 666,
+      "radius_mismatches": 0,
+      "granule_mismatches": 0,
+      "members_evicted": 40,
+      "granule_gains": 480,
+      "dataset": "citeseer",
+      "seed": 3
+    },
+    {
+      "steps": 666,
+      "radius_mismatches": 0,
+      "granule_mismatches": 0,
+      "members_evicted": 132,
+      "granule_gains": 679,
+      "dataset": "citeseer",
+      "seed": 4
+    }
+  ],
+  "ring_enemy": [
+    {
+      "n": 256,
+      "seed": 0,
+      "shrink": 128,
+      "members_evicted": 15733,
+      "radius_mismatches": 0,
+      "granule_mismatches": 0
+    },
+    {
+      "n": 256,
+      "seed": 1,
+      "shrink": 128,
+      "members_evicted": 15735,
+      "radius_mismatches": 0,
+      "granule_mismatches": 0
+    },
+    {
+      "n": 256,
+      "seed": 2,
+      "shrink": 128,
+      "members_evicted": 15818,
+      "radius_mismatches": 0,
+      "granule_mismatches": 0
+    },
+    {
+      "n": 256,
+      "seed": 3,
+      "shrink": 128,
+      "members_evicted": 15792,
+      "radius_mismatches": 0,
+      "granule_mismatches": 0
+    },
+    {
+      "n": 256,
+      "seed": 4,
+      "shrink": 128,
+      "members_evicted": 15721,
+      "radius_mismatches": 0,
+      "granule_mismatches": 0
+    },
+    {
+      "n": 1024,
+      "seed": 0,
+      "shrink": 512,
+      "members_evicted": 253530,
+      "radius_mismatches": 0,
+      "granule_mismatches": 0
+    },
+    {
+      "n": 1024,
+      "seed": 1,
+      "shrink": 512,
+      "members_evicted": 253232,
+      "radius_mismatches": 0,
+      "granule_mismatches": 0
+    },
+    {
+      "n": 1024,
+      "seed": 2,
+      "shrink": 512,
+      "members_evicted": 253559,
+      "radius_mismatches": 0,
+      "granule_mismatches": 0
+    },
+    {
+      "n": 1024,
+      "seed": 3,
+      "shrink": 512,
+      "members_evicted": 253579,
+      "radius_mismatches": 0,
+      "granule_mismatches": 0
+    },
+    {
+      "n": 1024,
+      "seed": 4,
+      "shrink": 512,
+      "members_evicted": 253190,
+      "radius_mismatches": 0,
+      "granule_mismatches": 0
+    }
+  ]
+}

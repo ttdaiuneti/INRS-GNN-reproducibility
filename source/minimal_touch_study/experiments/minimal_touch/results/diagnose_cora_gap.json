@@ -1,0 +1,62 @@
+[
+  {
+    "dataset": "cora",
+    "seed": 0,
+    "n80": 2166,
+    "n_all": 2708,
+    "inc_back_to_back_ms": 4.664728999999923,
+    "inc_after_rebuild_ms": 2.586458499999722,
+    "rebuild_80_ms": 56.15804199999985,
+    "rebuild_all_ms": 83.73241700000023
+  },
+  {
+    "dataset": "cora",
+    "seed": 1,
+    "n80": 2166,
+    "n_all": 2708,
+    "inc_back_to_back_ms": 2.5364374999998773,
+    "inc_after_rebuild_ms": 2.620478999999065,
+    "rebuild_80_ms": 54.230041000000284,
+    "rebuild_all_ms": 83.81720900000289
+  },
+  {
+    "dataset": "cora",
+    "seed": 2,
+    "n80": 2166,
+    "n_all": 2708,
+    "inc_back_to_back_ms": 2.540957999999094,
+    "inc_after_rebuild_ms": 2.637792000001582,
+    "rebuild_80_ms": 54.51258400000114,
+    "rebuild_all_ms": 84.55379199999413
+  },
+  {
+    "dataset": "citeseer",
+    "seed": 0,
+    "n80": 2661,
+    "n_all": 3327,
+    "inc_back_to_back_ms": 15.287979500001825,
+    "inc_after_rebuild_ms": 8.063270999997485,
+    "rebuild_80_ms": 114.59758300000544,
+    "rebuild_all_ms": 184.13220799999408
+  },
+  {
+    "dataset": "citeseer",
+    "seed": 1,
+    "n80": 2661,
+    "n_all": 3327,
+    "inc_back_to_back_ms": 7.965853999998274,
+    "inc_after_rebuild_ms": 8.237250000007634,
+    "rebuild_80_ms": 120.23720899999546,
+    "rebuild_all_ms": 196.05995899999584
+  },
+  {
+    "dataset": "citeseer",
+    "seed": 2,
+    "n80": 2661,
+    "n_all": 3327,
+    "inc_back_to_back_ms": 7.992395999991686,
+    "inc_after_rebuild_ms": 8.245645999977569,
+    "rebuild_80_ms": 109.05462499999885,
+    "rebuild_all_ms": 187.61462500000903
+  }
+]

@@ -1,0 +1,20 @@
+torch=2.8.0 numpy=2.0.2 scipy=1.13.1 sklearn=1.6.1
+platform=macOS-26.6.2-arm64-arm-64bit processor=arm
+
+=== cora ===
+  seed=42: inc_w=0.27ms inc_delta=2.05ms batch_w_naive=156.95ms batch_w_vec=24.32ms batch_delta_naive=2659.31ms batch_delta_vec=41.42ms
+  seed=0: inc_w=0.26ms inc_delta=1.29ms batch_w_naive=160.15ms batch_w_vec=26.83ms batch_delta_naive=2693.80ms batch_delta_vec=37.47ms
+  seed=1: inc_w=0.20ms inc_delta=1.28ms batch_w_naive=160.78ms batch_w_vec=25.98ms batch_delta_naive=2724.48ms batch_delta_vec=36.91ms
+  seed=2: inc_w=0.24ms inc_delta=1.31ms batch_w_naive=153.43ms batch_w_vec=24.91ms batch_delta_naive=2573.70ms batch_delta_vec=36.07ms
+  seed=3: inc_w=0.26ms inc_delta=1.29ms batch_w_naive=151.45ms batch_w_vec=23.49ms batch_delta_naive=2497.34ms batch_delta_vec=33.20ms
+  AGG: speedup_W_naive=642.3x speedup_W_vec=103.1x speedup_e2e_FAIR=37.7x speedup_e2e_naive_ref=1694.9x
+
+=== citeseer ===
+  seed=42: inc_w=0.23ms inc_delta=9.18ms batch_w_naive=251.85ms batch_w_vec=97.58ms batch_delta_naive=21176.03ms batch_delta_vec=83.57ms
+  seed=0: inc_w=0.22ms inc_delta=8.28ms batch_w_naive=251.73ms batch_w_vec=100.36ms batch_delta_naive=21418.98ms batch_delta_vec=86.21ms
+  seed=1: inc_w=0.23ms inc_delta=8.29ms batch_w_naive=255.07ms batch_w_vec=95.91ms batch_delta_naive=21714.70ms batch_delta_vec=83.38ms
+  seed=2: inc_w=0.22ms inc_delta=8.28ms batch_w_naive=239.21ms batch_w_vec=81.73ms batch_delta_naive=20445.62ms batch_delta_vec=79.67ms
+  seed=3: inc_w=0.22ms inc_delta=8.27ms batch_w_naive=232.60ms batch_w_vec=72.73ms batch_delta_naive=19822.55ms batch_delta_vec=76.65ms
+  AGG: speedup_W_naive=1092.9x speedup_W_vec=398.3x speedup_e2e_FAIR=19.8x speedup_e2e_naive_ref=2439.9x
+
+Saved: /Users/tranthanhdai/Documents/2026/Phd-Dai/INRS-GNN/experiments/minimal_touch/results/citation_fair_minimal.json

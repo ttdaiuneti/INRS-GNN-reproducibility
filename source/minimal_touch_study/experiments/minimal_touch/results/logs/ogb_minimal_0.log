@@ -1,0 +1,13 @@
+numpy=2.0.2 scipy=1.13.1 platform=macOS-26.6.2-arm64-arm-64bit
+ogbn-arxiv: |V|=169343 |B|=128 |E|=1157799
+  initial batch delta (|V|=135474): 42.3 s
+  initial batch W (|E|=738602): 0.95 s
+  [anchor t=0] |V|=135474 batch delta 42.2s + W 0.94s | maintained state: max|dd|=0.000e+00, inf mismatch=0, max|dW| over 738602 edges = 0.000e+00
+  [anchor t=500] |V|=135974 batch delta 43.3s + W 0.85s | maintained state: max|dd|=9.548e-15, inf mismatch=0, max|dW| over 743630 edges = 6.883e-15
+  [anchor t=1000] |V|=136474 batch delta 43.8s + W 0.95s | maintained state: max|dd|=9.548e-15, inf mismatch=0, max|dW| over 749075 edges = 6.883e-15
+
+per-insertion total: mean 11.7 ms (median 11.2, p90 11.8, max 28.0)
+  delta 11.6 | W 0.1 | bookkeeping 0.1 ms
+batch anchor at end: 44.8 s  ->  speedup 3815x
+peak RSS 24.8 GB
+[PASS] 3 checkpoints verified within tol 1e-09 (max|dd| 9.55e-15, max|dW| 6.88e-15, 0 inf mismatches, W symmetric); wrote /Users/tranthanhdai/Documents/2026/Phd-Dai/INRS-GNN/experiments/minimal_touch/results/ogb_minimal/seed_0.json

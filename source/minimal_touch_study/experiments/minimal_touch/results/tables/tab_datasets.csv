@@ -1,0 +1,7 @@
+Graph,$|V|$,$|B|$,Classes,Edges,Source,Used in
+Cora,"2{,}708",1433,7,"5{,}278",Planetoid~\cite{fey2019fast},4.2--4.4
+CiteSeer,"3{,}327",3703,6,"4{,}552",Planetoid~\cite{fey2019fast},4.2--4.4
+PubMed,"19{,}717",500,3,"44{,}324",Planetoid~\cite{fey2019fast},4.3
+SBM,"6k, 12k, 25k",100,5,$\bar d \approx 10$,Synthetic,4.3
+"Ring, star","256--2{,}049",16,2,$n$ or $n-1$,Synthetic,"4.2, 4.3"
+ogbn-arxiv,"169{,}343",128,40,"1{,}157{,}799",OGB~\cite{hu2020ogb},"4.2, 4.3"
