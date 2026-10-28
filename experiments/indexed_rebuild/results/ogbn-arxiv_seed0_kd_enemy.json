@@ -1,0 +1,18 @@
+{
+  "dataset": "ogbn-arxiv",
+  "seed": 0,
+  "variant": "kd_enemy",
+  "n": 136474,
+  "d": 128,
+  "n_classes": 40,
+  "times_s": [
+    508.967754625
+  ],
+  "median_s": 508.967754625,
+  "max_abs_diff": 1.765254609153999e-14,
+  "inf_mismatch": 0,
+  "exact": true,
+  "protocol_sha256": "1c2af986961d92b7ce2f4d979d6b4645f19201eac177dcaa8c31b702d458dc46",
+  "runner_sha256": "392e1c66ef22f4477572eeecc7fb9106c899aa033eba499ee752d4c66700f64c",
+  "wall_s": 553.1806252002716
+}

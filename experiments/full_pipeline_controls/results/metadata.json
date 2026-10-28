@@ -1,0 +1,20 @@
+{
+  "started": "2026-09-13T05:25:16.254420+00:00",
+  "source_hashes": {
+    "experiments/full_pipeline_controls/protocol.json": "8c85a3d9d72b40d0968724fc1e9b4dfa8e72bad2082e3eaa73a8c078defa2dba",
+    "experiments/full_pipeline_controls/run.py": "0c1ae43b4ed76a643a13278f4579803b1fff5a38ed7a7d133ac44727bcbe8ee8",
+    "experiments/e0_gnn_prototype.py": "5c34f3db54be841de717e6fc038ba7f42e2af87c75d844433fe58c6f1ce3a915",
+    "experiments/label_safe_stream/run.py": "b5a306f59a48e11e1724f9393ed8502b9b1e2012f6373fab77793af217aefd06",
+    "shared/graph_data.py": "2880339f157d881a787f5093d03cf2001dd8180b9270a5070e173139c33fb51d",
+    "theory/incremental_rough_adjacency.py": "f4a6edc22773dcd40bb00de85e58cd8d68eb81e4987ca34c90cbba101ecbd08e"
+  },
+  "checks": {
+    "cached_forward_and_gradient": true,
+    "empty_and_nonempty_control_invariants": true,
+    "heldout_target_masking": true
+  },
+  "torch": "2.8.0",
+  "numpy": "2.0.2",
+  "completed": true,
+  "finished": "2026-09-13T05:29:04.357086+00:00"
+}

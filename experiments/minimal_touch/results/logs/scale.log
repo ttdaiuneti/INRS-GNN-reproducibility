@@ -1,0 +1,11 @@
+numpy=2.0.2 scipy=1.13.1 sklearn=1.6.1
+platform=macOS-26.6.2-arm64-arm-64bit
+  [spot check] SBM |V|=4806 |B|=100: max|W_inc - W_batch| = 0 over 4806x4806 matrix
+  cora       n~  2166: fair    19.0x  (inc d=2.28 w=0.30 | batch d=22.9 w=25.8 ms)
+  citeseer   n~  2661: fair    13.3x  (inc d=7.65 w=0.20 | batch d=56.9 w=47.4 ms)
+  pubmed     n~ 15773: fair   277.0x  (inc d=9.16 w=1.94 | batch d=1618.3 w=659.7 ms)
+  SBM-6000   n~  4800: fair   182.8x  (inc d=0.46 w=0.36 | batch d=83.2 w=57.3 ms)
+  SBM-12000  n~  9600: fair   346.3x  (inc d=0.89 w=2.24 | batch d=321.6 w=211.5 ms)
+  SBM-25000  n~ 20000: fair   935.0x  (inc d=2.45 w=2.01 | batch d=2052.2 w=1057.9 ms)
+
+Saved: ~/Documents/2026/Phd-Dai/INRS-GNN/experiments/minimal_touch/results/scale_minimal.json

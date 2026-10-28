@@ -1,0 +1,21 @@
+{
+  "version": "indexed-rebuild-v1",
+  "frozen_at": "2026-10-26",
+  "status": "frozen before any run",
+  "question": "Does an exact rebuild of the nearest-enemy radii with a spatial index (KD-tree or ball tree) beat the vectorized all-pairs (Gram) rebuild used as the comparator in the manuscript, and what does that do to the reported incremental speedups?",
+  "datasets": {
+    "cora": "PyG Planetoid, L1-normalized float64 features (load_planetoid_pyg), all 2,708 nodes",
+    "citeseer": "PyG Planetoid, L1-normalized float64 features, all 3,327 nodes",
+    "ogbn-arxiv": "shared/data/ogb, 128 features; active set = final checkpoint of ogb_robustness (seeded permutation, 80% initial set + 1,000 arrivals), seeds 0, 1, 2"
+  },
+  "rebuild_variants": {
+    "gram": "Citation: theory.incremental_nrs.calc_deltas_vectorized. ogbn-arxiv: ogb_robustness/stable_batch.calc_deltas_blocked_stable (block 2048). Same comparators as the manuscript, re-timed in this process.",
+    "kd_enemy / ball_enemy": "For each class c: sklearn NearestNeighbors(n_neighbors=1, algorithm=kd_tree|ball_tree, n_jobs=-1) fitted on nodes not in c, queried by nodes in c.",
+    "kd_class / ball_class": "For each class c: tree fitted on nodes in c, queried by all nodes not in c; radius = running minimum over classes."
+  },
+  "timing": "Wall clock of the radius rebuild only (index construction included). Citation: 5 repetitions, report median and all values. ogbn-arxiv: 1 repetition per seed. Default thread settings. Each (dataset, seed, variant) runs in a fresh subprocess with a 1,800 s cap; a run over the cap is recorded as 'exceeded cap', not dropped. On ogbn-arxiv, seed 0 runs first; a variant that exceeds the cap on seed 0 is not run on seeds 1 and 2 and is recorded as 'skipped after cap on seed 0'.",
+  "exactness": "Every variant's radii are compared with a direct-difference reference (citation: calc_deltas; ogbn-arxiv: calc_deltas_blocked_stable). Pass if max abs difference <= 1e-9 and the +inf pattern is identical.",
+  "derived": "Full indexed rebuild = fastest exact index variant for the radii + the existing vectorized weight pass (citation: batch_w_vectorized_ms of minimal_touch/results/citation_fair_minimal_pyg.json; ogbn-arxiv: batch_w_s of the final anchor in minimal_touch/results/ogb_minimal/seed_s.json). Speedup against it = that time / the mean incremental latency of the same existing results. Incremental latencies are not re-measured.",
+  "limits": "One machine (Apple M4 Pro). Only sklearn exact trees; no approximate search, no FAISS/GPU. Citation rebuilds are timed on the full graph, whereas the manuscript sampled rebuilds at 80-100% of the nodes.",
+  "decision_rule": "If the fastest index variant is not faster than gram on a dataset, the all-pairs comparator stands for that dataset and the manuscript says so with this evidence. If an index variant is faster, the manuscript reports the speedup against it as well, in the abstract if it changes the headline."
+}

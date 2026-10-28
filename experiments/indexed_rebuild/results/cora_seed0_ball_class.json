@@ -1,0 +1,22 @@
+{
+  "dataset": "cora",
+  "seed": 0,
+  "variant": "ball_class",
+  "n": 2708,
+  "d": 1433,
+  "n_classes": 7,
+  "times_s": [
+    0.6554216250000002,
+    0.5369081250000001,
+    0.5206879579999999,
+    0.5343759590000001,
+    0.5350590830000002
+  ],
+  "median_s": 0.5350590830000002,
+  "max_abs_diff": 3.3306690738754696e-16,
+  "inf_mismatch": 0,
+  "exact": true,
+  "protocol_sha256": "1c2af986961d92b7ce2f4d979d6b4645f19201eac177dcaa8c31b702d458dc46",
+  "runner_sha256": "392e1c66ef22f4477572eeecc7fb9106c899aa033eba499ee752d4c66700f64c",
+  "wall_s": 10.56513500213623
+}

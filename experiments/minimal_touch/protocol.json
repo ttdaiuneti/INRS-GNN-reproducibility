@@ -1,0 +1,18 @@
+{
+  "version": "minimal-touch-v1",
+  "status": "frozen before first execution (2026-10-23)",
+  "question": "Does re-evaluating only edges incident to {v_new} U S_delta (the minimal sufficient set, Theorem 3 part (i) uses only v,u not in S_delta) give the batch matrix, and how do timings change relative to the conservative set T_str U S_delta?",
+  "policies": {
+    "conservative": "touch_str = {v_new} U neighbours(v_new); T = touch_str U S_delta",
+    "minimal": "touch_str = {v_new}; T = {v_new} U S_delta"
+  },
+  "studies": {
+    "stress": "experiments/locality_stress/run.py protocol (sizes 256/1024/2048, seeds 0-4, 5 repetitions, 16 features, one thread). Both policies run in the same process, same order, paired per case. Validation identical except expected |T| and Q_T under the minimal policy: ring_enemy |T|=n/2+1, Q_T=n+2 (attached node is in S_delta); ring_control, star_leaf, star_hub |T|=1, Q_T=1.",
+    "ogb_robustness": "experiments/ogb_robustness protocol v2 (seeds 0-2, 1000 insertions, checkpoints 0/500/1000, stable batch reference, tolerance 1e-9). Both policies, each seed in a fresh process, serial; conservative rerun so that both policies are timed in the same session.",
+    "ogb_stream200": "experiments/e2e_ogb_stream.py unchanged settings (seed 0, 200 insertions, checkpoints 0/100/200), minimal policy only (Table 8 / Figure 3 OGB point).",
+    "citation_fair": "experiments/e2e_fair_timing.py unchanged settings (Cora, CiteSeer; seeds 42,0,1,2,3), minimal policy only (Table 7).",
+    "scale": "experiments/e2e_scale_timing.py unchanged settings (Cora, CiteSeer, PubMed, SBM 6k/12k/25k; seeds 0-2; 8 insertions), minimal policy only (Table 8 / Figure 3)."
+  },
+  "implementation": "run.py reads each original script, applies asserted single-occurrence text replacements (touch construction, output path, and in the stress study the expected-count assertions), and executes the patched source. Kernels in theory/ and shared/theory/ are not modified. Results go to experiments/minimal_touch/results/ only; existing result files are not overwritten.",
+  "reporting": "All runs retained. Manuscript timing tables are regenerated from these results; the conservative policy is reported as a paired comparison in the stress and OGB studies. No run is excluded."
+}

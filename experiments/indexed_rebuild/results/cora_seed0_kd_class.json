@@ -1,0 +1,22 @@
+{
+  "dataset": "cora",
+  "seed": 0,
+  "variant": "kd_class",
+  "n": 2708,
+  "d": 1433,
+  "n_classes": 7,
+  "times_s": [
+    0.6915672500000001,
+    0.5576655420000001,
+    0.5753738340000001,
+    0.5689582089999998,
+    0.5490350419999999
+  ],
+  "median_s": 0.5689582089999998,
+  "max_abs_diff": 3.3306690738754696e-16,
+  "inf_mismatch": 0,
+  "exact": true,
+  "protocol_sha256": "1c2af986961d92b7ce2f4d979d6b4645f19201eac177dcaa8c31b702d458dc46",
+  "runner_sha256": "392e1c66ef22f4477572eeecc7fb9106c899aa033eba499ee752d4c66700f64c",
+  "wall_s": 10.754073858261108
+}

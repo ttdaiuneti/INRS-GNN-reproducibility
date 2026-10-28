@@ -1,0 +1,70 @@
+{
+  "named_cases": 7,
+  "random_streams": 300,
+  "totals": {
+    "shrink": 957,
+    "both_in_T": 576,
+    "inf_to_finite": 168,
+    "zero_dist": 901,
+    "tie": 1172,
+    "steps": 1812
+  },
+  "named": {
+    "single class, infinite to finite": {
+      "shrink": 5,
+      "both_in_T": 5,
+      "inf_to_finite": 5,
+      "zero_dist": 0,
+      "tie": 0,
+      "steps": 3
+    },
+    "distance zero between classes": {
+      "shrink": 2,
+      "both_in_T": 2,
+      "inf_to_finite": 0,
+      "zero_dist": 3,
+      "tie": 3,
+      "steps": 3
+    },
+    "ties at the minimal distance": {
+      "shrink": 2,
+      "both_in_T": 1,
+      "inf_to_finite": 0,
+      "zero_dist": 0,
+      "tie": 2,
+      "steps": 4
+    },
+    "edge with both ends in T": {
+      "shrink": 1,
+      "both_in_T": 1,
+      "inf_to_finite": 0,
+      "zero_dist": 0,
+      "tie": 0,
+      "steps": 1
+    },
+    "hub arrival": {
+      "shrink": 1,
+      "both_in_T": 1,
+      "inf_to_finite": 0,
+      "zero_dist": 0,
+      "tie": 0,
+      "steps": 1
+    },
+    "ring, half of all radii shrink": {
+      "shrink": 20,
+      "both_in_T": 20,
+      "inf_to_finite": 0,
+      "zero_dist": 0,
+      "tie": 0,
+      "steps": 1
+    },
+    "duplicates within and across classes": {
+      "shrink": 3,
+      "both_in_T": 3,
+      "inf_to_finite": 2,
+      "zero_dist": 6,
+      "tie": 3,
+      "steps": 5
+    }
+  }
+}

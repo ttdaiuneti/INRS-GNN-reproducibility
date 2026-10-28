@@ -1,0 +1,12 @@
+{
+  "cora": {
+    "n": 2708,
+    "zero": 0,
+    "infinite": 0
+  },
+  "citeseer": {
+    "n": 3327,
+    "zero": 4,
+    "infinite": 0
+  }
+}

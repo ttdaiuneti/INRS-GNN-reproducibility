@@ -1,0 +1,22 @@
+{
+  "started_utc": "2026-09-11T00:28:10.850416+00:00",
+  "protocol_sha256": "b8bcd2977493cd21ce116112d79e793b661fc37ef509f0bf9b45287a01d1ce0e",
+  "script_sha256": "eafd256642121af0333fb73ba31c59d7bf73baede54189ab563496d0e9017033",
+  "python": "3.9.6 (default, May 22 2026, 11:13:45) \n[Clang 21.0.0 (clang-2100.1.1.101)]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "numpy": "2.0.2",
+  "scipy": "1.13.1",
+  "threads": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "source_sha256": {
+    "shared/theory/incremental_nrs.py": "9ad0377de2bcb0b1a168929e8fa8b832704a5311aa7f75846cef8ce79aa1a27d",
+    "theory/incremental_rough_adjacency.py": "f4a6edc22773dcd40bb00de85e58cd8d68eb81e4987ca34c90cbba101ecbd08e"
+  },
+  "finished_utc": "2026-09-11T00:28:26.489494+00:00",
+  "suite_peak_rss_bytes": 189759488,
+  "raw_sha256": "8ac0ee78cde8d34e76aadfe80e3c3a8e7cf165a92bbf189405113360bd12a1f9",
+  "completed": true
+}

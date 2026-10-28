@@ -1,0 +1,22 @@
+{
+  "dataset": "citeseer",
+  "seed": 0,
+  "variant": "kd_class",
+  "n": 3327,
+  "d": 3703,
+  "n_classes": 6,
+  "times_s": [
+    2.124955875,
+    2.0281027500000004,
+    1.9764625420000002,
+    1.9527477500000003,
+    2.0523817080000004
+  ],
+  "median_s": 2.0281027500000004,
+  "max_abs_diff": 2.220446049250313e-16,
+  "inf_mismatch": 0,
+  "exact": true,
+  "protocol_sha256": "1c2af986961d92b7ce2f4d979d6b4645f19201eac177dcaa8c31b702d458dc46",
+  "runner_sha256": "392e1c66ef22f4477572eeecc7fb9106c899aa033eba499ee752d4c66700f64c",
+  "wall_s": 37.439136028289795
+}

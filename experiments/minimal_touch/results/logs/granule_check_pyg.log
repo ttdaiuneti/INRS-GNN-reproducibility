@@ -1,0 +1,21 @@
+{'steps': 542, 'radius_mismatches': 0, 'granule_mismatches': 0, 'members_evicted': 592, 'granule_gains': 1083, 'dataset': 'cora', 'seed': 0}
+{'steps': 542, 'radius_mismatches': 0, 'granule_mismatches': 0, 'members_evicted': 816, 'granule_gains': 1164, 'dataset': 'cora', 'seed': 1}
+{'steps': 542, 'radius_mismatches': 0, 'granule_mismatches': 0, 'members_evicted': 657, 'granule_gains': 1193, 'dataset': 'cora', 'seed': 2}
+{'steps': 542, 'radius_mismatches': 0, 'granule_mismatches': 0, 'members_evicted': 671, 'granule_gains': 1195, 'dataset': 'cora', 'seed': 3}
+{'steps': 542, 'radius_mismatches': 0, 'granule_mismatches': 0, 'members_evicted': 791, 'granule_gains': 1005, 'dataset': 'cora', 'seed': 4}
+{'steps': 666, 'radius_mismatches': 0, 'granule_mismatches': 0, 'members_evicted': 78, 'granule_gains': 1048, 'dataset': 'citeseer', 'seed': 0}
+{'steps': 666, 'radius_mismatches': 0, 'granule_mismatches': 0, 'members_evicted': 97, 'granule_gains': 591, 'dataset': 'citeseer', 'seed': 1}
+{'steps': 666, 'radius_mismatches': 0, 'granule_mismatches': 0, 'members_evicted': 66, 'granule_gains': 853, 'dataset': 'citeseer', 'seed': 2}
+{'steps': 666, 'radius_mismatches': 0, 'granule_mismatches': 0, 'members_evicted': 21, 'granule_gains': 592, 'dataset': 'citeseer', 'seed': 3}
+{'steps': 666, 'radius_mismatches': 0, 'granule_mismatches': 0, 'members_evicted': 91, 'granule_gains': 819, 'dataset': 'citeseer', 'seed': 4}
+{'n': 256, 'seed': 0, 'shrink': 128, 'members_evicted': 15733, 'radius_mismatches': 0, 'granule_mismatches': 0}
+{'n': 256, 'seed': 1, 'shrink': 128, 'members_evicted': 15735, 'radius_mismatches': 0, 'granule_mismatches': 0}
+{'n': 256, 'seed': 2, 'shrink': 128, 'members_evicted': 15818, 'radius_mismatches': 0, 'granule_mismatches': 0}
+{'n': 256, 'seed': 3, 'shrink': 128, 'members_evicted': 15792, 'radius_mismatches': 0, 'granule_mismatches': 0}
+{'n': 256, 'seed': 4, 'shrink': 128, 'members_evicted': 15721, 'radius_mismatches': 0, 'granule_mismatches': 0}
+{'n': 1024, 'seed': 0, 'shrink': 512, 'members_evicted': 253530, 'radius_mismatches': 0, 'granule_mismatches': 0}
+{'n': 1024, 'seed': 1, 'shrink': 512, 'members_evicted': 253232, 'radius_mismatches': 0, 'granule_mismatches': 0}
+{'n': 1024, 'seed': 2, 'shrink': 512, 'members_evicted': 253559, 'radius_mismatches': 0, 'granule_mismatches': 0}
+{'n': 1024, 'seed': 3, 'shrink': 512, 'members_evicted': 253579, 'radius_mismatches': 0, 'granule_mismatches': 0}
+{'n': 1024, 'seed': 4, 'shrink': 512, 'members_evicted': 253190, 'radius_mismatches': 0, 'granule_mismatches': 0}
+[PASS] all granule member sets equal the batch definition

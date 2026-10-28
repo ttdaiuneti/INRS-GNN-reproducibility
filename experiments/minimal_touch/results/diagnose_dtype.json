@@ -1,0 +1,98 @@
+[
+  {
+    "dataset": "cora",
+    "dtype": "float32",
+    "seed": 0,
+    "inc_delta_ms": 1.545458000000277,
+    "rebuild_80_ms": 39.83391600000008,
+    "rebuild_all_ms": 62.73349999999978
+  },
+  {
+    "dataset": "cora",
+    "dtype": "float32",
+    "seed": 1,
+    "inc_delta_ms": 1.133333499999889,
+    "rebuild_80_ms": 41.91704100000049,
+    "rebuild_all_ms": 64.6666250000001
+  },
+  {
+    "dataset": "cora",
+    "dtype": "float32",
+    "seed": 2,
+    "inc_delta_ms": 1.1524375000000475,
+    "rebuild_80_ms": 41.94079100000003,
+    "rebuild_all_ms": 62.44704199999962
+  },
+  {
+    "dataset": "cora",
+    "dtype": "float64",
+    "seed": 0,
+    "inc_delta_ms": 2.2063125000002515,
+    "rebuild_80_ms": 44.66554200000061,
+    "rebuild_all_ms": 86.33529199999934
+  },
+  {
+    "dataset": "cora",
+    "dtype": "float64",
+    "seed": 1,
+    "inc_delta_ms": 2.194312000000309,
+    "rebuild_80_ms": 44.263708999999096,
+    "rebuild_all_ms": 86.61991600000007
+  },
+  {
+    "dataset": "cora",
+    "dtype": "float64",
+    "seed": 2,
+    "inc_delta_ms": 2.186937999999472,
+    "rebuild_80_ms": 44.075292000002264,
+    "rebuild_all_ms": 87.09075000000155
+  },
+  {
+    "dataset": "citeseer",
+    "dtype": "float32",
+    "seed": 0,
+    "inc_delta_ms": 3.740125000000205,
+    "rebuild_80_ms": 95.76833299999876,
+    "rebuild_all_ms": 191.37475000000137
+  },
+  {
+    "dataset": "citeseer",
+    "dtype": "float32",
+    "seed": 1,
+    "inc_delta_ms": 3.7009794999995904,
+    "rebuild_80_ms": 97.17399999999543,
+    "rebuild_all_ms": 196.15854199999916
+  },
+  {
+    "dataset": "citeseer",
+    "dtype": "float32",
+    "seed": 2,
+    "inc_delta_ms": 3.7100834999996835,
+    "rebuild_80_ms": 92.36049999999807,
+    "rebuild_all_ms": 197.597542000004
+  },
+  {
+    "dataset": "citeseer",
+    "dtype": "float64",
+    "seed": 0,
+    "inc_delta_ms": 7.44875000000178,
+    "rebuild_80_ms": 99.92220899999893,
+    "rebuild_all_ms": 194.82566700000348
+  },
+  {
+    "dataset": "citeseer",
+    "dtype": "float64",
+    "seed": 1,
+    "inc_delta_ms": 7.45856300000014,
+    "rebuild_80_ms": 102.46779199999878,
+    "rebuild_all_ms": 190.51004199999966
+  },
+  {
+    "dataset": "citeseer",
+    "dtype": "float64",
+    "seed": 2,
+    "inc_delta_ms": 7.44058349999932,
+    "rebuild_80_ms": 100.74708300000168,
+    "rebuild_all_ms": 195.64812500000528
+  }
+]
